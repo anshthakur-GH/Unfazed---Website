@@ -7,65 +7,102 @@ const LogoSlideshow = lazy(() => import('./LogoSlideshow'));
 
 const HeroSection = () => {
   return (
-    <div className="relative overflow-hidden pt-24">
+    <div className="relative overflow-hidden pt-20 md:pt-24">
       {/* Top Gradient Section */}
-      <div className="absolute inset-0 bg-gradient-to-b from-saas-black to-transparent -z-10 h-[800px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-saas-black to-transparent -z-10 h-[700px] md:h-[800px]"></div>
+      
       {/* Hero Content */}
       <div className="relative z-10">
-        <div className="section-container py-12 md:py-16">
-          <div className="flex flex-col items-center justify-center max-w-4xl mx-auto text-center mb-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 lg:py-16">
+          <div className="max-w-4xl mx-auto text-center">
             <div className="animate-fade-in">
-              <div className="inline-flex items-center bg-saas-orange/10 text-saas-orange px-4 py-2 rounded-full text-sm font-medium mb-6 border border-saas-orange/20">
-                <div className="flex items-center mr-2">
+              {/* Rating Badge */}
+              <div className="inline-flex items-center bg-saas-orange/10 text-saas-orange px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6 border border-saas-orange/20">
+                <div className="flex items-center mr-1.5 sm:mr-2">
                   {[...Array(4)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-current" />
+                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-current" />
                   ))}
-                  <div className="relative h-4 w-4">
-                    <Star className="h-4 w-4 text-gray-300" />
+                  <div className="relative h-3 w-3 sm:h-4 sm:w-4">
+                    <Star className="h-3 w-3 sm:h-4 sm:w-4 text-gray-300" />
                     <div className="absolute left-0 top-0 w-1/2 h-full overflow-hidden">
-                      <Star className="h-4 w-4 fill-current" />
+                      <Star className="h-3 w-3 sm:h-4 sm:w-4 fill-current" />
                     </div>
                   </div>
                 </div>
-                <span className="ml-1">4.5/5</span>
-                <span className="text-saas-orange/70 ml-1">Customer Rating</span>
+                <span className="ml-0.5 sm:ml-1">4.5/5</span>
+                <span className="text-saas-orange/70 ml-0.5 sm:ml-1 text-xs sm:text-sm">Customer Rating</span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-                Save 80% Time, Earn 24/7 with <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Automations</span> & <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">AI</span>
+              {/* Main Heading */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
+                Save 80% Time, Earn 24/7 with{' '}
+                <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                  Automations
+                </span>{' '}
+                &{' '}
+                <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                  AI
+                </span>
               </h1>
               
-              <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+              {/* Subheading */}
+              <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-8 px-2 sm:px-0">
                 We design AI-powered automation workflows that save time, cut costs, and scale your business 24/7 — turning repetitive tasks into profit-driving systems while you sleep.
               </p>
               
-              <div className="flex justify-center mb-12">
+              {/* CTA Button */}
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8 sm:mb-12">
                 <a 
                   href="#contact-form"
-                  className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-base inline-flex items-center"
+                  className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 sm:px-8 rounded-lg transition-all duration-200 text-sm sm:text-base inline-flex items-center justify-center"
                 >
                   Get Unfazed Today
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
+                <a 
+                  href="#how-it-works"
+                  className="bg-transparent hover:bg-white/5 text-white font-medium py-3 px-6 sm:px-8 rounded-lg transition-all duration-200 text-sm sm:text-base border border-gray-700 inline-flex items-center justify-center"
+                >
+                  How It Works
+                </a>
               </div>
               
-              <div className="flex items-center justify-center gap-4 mb-40">
-                <div className="flex -space-x-3">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" 
-                    className="w-10 h-10 rounded-full border-2 border-saas-black" alt="User" />
-                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" 
-                    className="w-10 h-10 rounded-full border-2 border-saas-black" alt="User" />
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64" 
-                    className="w-10 h-10 rounded-full border-2 border-saas-black" alt="User" />
+              {/* Social Proof */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-16 sm:mb-24 md:mb-32 lg:mb-40">
+                <div className="flex -space-x-2 sm:-space-x-3">
+                  <img 
+                    src="/logo1.png" 
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-saas-black object-cover" 
+                    alt="Client logo 1" 
+                    loading="lazy"
+                    width={40}
+                    height={40}
+                  />
+                  <img 
+                    src="/logo2.png" 
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-saas-black object-cover" 
+                    alt="Client logo 2"
+                    loading="lazy"
+                    width={40}
+                    height={40}
+                  />
+                  <img 
+                    src="/logo3.png" 
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-saas-black object-cover" 
+                    alt="Client logo 3"
+                    loading="lazy"
+                    width={40}
+                    height={40}
+                  />
                 </div>
-                <p className="text-sm text-gray-300">
+                <p className="text-xs sm:text-sm text-gray-300 text-center sm:text-left">
                   <span className="font-semibold text-saas-orange">250+</span> businesses using our automations
                 </p>
               </div>
               
               {/* Logo Slideshow */}
-              <div className="w-full mb-16">
-                <Suspense fallback={<div className="h-20"></div>}>
+              <div className="w-full mb-12 sm:mb-16">
+                <Suspense fallback={<div className="h-16 sm:h-20"></div>}>
                   <LogoSlideshow />
                 </Suspense>
               </div>

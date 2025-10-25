@@ -30,22 +30,22 @@ const testimonials = [
   {
     text: "Our lead qualification process was a mess. Unfazed built us a system that eliminated data errors and guaranteed pipeline quality.",
     author: "Elena R.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&h=100"
+    image: "/logo6.png"
   },
   {
     text: "The ROI was measurable almost immediately. We are earning money while we sleep—a massive shift in our business model.",
     author: "James K.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&h=200"
+    image: "/logo7.png"
   },
   {
     text: "The level of n8n expertise is unmatched. They delivered an unbreakable workflow that simple tools couldn't handle.",
     author: "Anika P.",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=200&h=200"
+    image: "/logo1.png"
   },
   {
     text: "We went from limited capacity to infinitely scalable overnight. This partnership fundamentally changed how we approach growth.",
     author: "Nina S.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100"
+    image: "/logo2.png"
   }
 ];
 
