@@ -25,7 +25,7 @@ export default defineConfig(({ mode }) => ({
     sourcemap: mode !== 'production',
     minify: 'terser',
     emptyOutDir: true,
-    assetsInlineLimit: 0,
+    assetsInlineLimit: 4096, // 4kb
     manifest: true,
     rollupOptions: {
       output: {
@@ -38,7 +38,7 @@ export default defineConfig(({ mode }) => ({
           if (ext === 'css') {
             return 'assets/css/[name]-[hash][extname]';
           }
-          if (['png', 'jpg', 'jpeg', 'gif', 'svg'].includes(ext)) {
+          if (['png', 'jpg', 'jpeg', 'gif', 'svg', 'webp'].includes(ext)) {
             return 'assets/images/[name]-[hash][extname]';
           }
           return 'assets/[name]-[hash][extname]';
@@ -47,6 +47,8 @@ export default defineConfig(({ mode }) => ({
     },
     // Copy public files to the root of the dist directory
     copyPublicDir: true,
+    // Ensure static assets are properly copied
+    assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg', '**/*.webp'],
   },
   publicDir: 'public',
 }));

@@ -1,14 +1,23 @@
 import React, { useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 
+// Import all logo images using Vite's import syntax
+import logo1 from '../../public/logo1.png';
+import logo2 from '../../public/logo2.png';
+import logo3 from '../../public/logo3.png';
+import logo4 from '../../public/logo4.png';
+import logo5 from '../../public/logo5.png';
+import logo6 from '../../public/logo6.png';
+import logo7 from '../../public/logo7.png';
+
 const logos = [
-  { id: 1, src: './public/logo1.png', alt: 'Logo 1', className: 'h-6 md:h-8' },
-  { id: 2, src: './public/logo2.png', alt: 'Logo 2', className: 'h-6 md:h-8' },
-  { id: 3, src: './public/logo3.png', alt: 'Logo 3', className: 'h-6 md:h-8' },
-  { id: 4, src: './public/logo4.png', alt: 'Logo 4', className: 'h-6 md:h-8' },
-  { id: 5, src: './public/logo5.png', alt: 'Logo 5', className: 'h-6 md:h-8' },
-  { id: 6, src: './public/logo6.png', alt: 'Logo 6', className: 'h-8 md:h-10' },
-  { id: 7, src: './public/logo7.png', alt: 'Logo 7', className: 'h-8 md:h-10' }
+  { id: 1, src: logo1, alt: 'Logo 1', className: 'h-6 md:h-8' },
+  { id: 2, src: logo2, alt: 'Logo 2', className: 'h-6 md:h-8' },
+  { id: 3, src: logo3, alt: 'Logo 3', className: 'h-6 md:h-8' },
+  { id: 4, src: logo4, alt: 'Logo 4', className: 'h-6 md:h-8' },
+  { id: 5, src: logo5, alt: 'Logo 5', className: 'h-6 md:h-8' },
+  { id: 6, src: logo6, alt: 'Logo 6', className: 'h-8 md:h-10' },
+  { id: 7, src: logo7, alt: 'Logo 7', className: 'h-8 md:h-10' }
 ];
 
 const LogoSlideshow = () => {
