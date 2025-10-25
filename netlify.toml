@@ -26,4 +26,5 @@
 # Disable Next.js plugin that's being auto-detected
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  enabled = false
+  [plugins.inputs]
+    enabled = false
