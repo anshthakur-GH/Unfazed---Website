@@ -2,8 +2,9 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
+// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/",
+  base: "./",
   server: {
     host: "::",
     port: 8080,
@@ -23,6 +24,9 @@ export default defineConfig(({ mode }) => ({
     assetsDir: 'assets',
     sourcemap: mode !== 'production',
     minify: 'terser',
+    emptyOutDir: true,
+    assetsInlineLimit: 0,
+    manifest: true,
     rollupOptions: {
       output: {
         entryFileNames: 'assets/js/[name]-[hash].js',
@@ -41,5 +45,8 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
+    // Copy public files to the root of the dist directory
+    copyPublicDir: true,
   },
+  publicDir: 'public',
 }));
