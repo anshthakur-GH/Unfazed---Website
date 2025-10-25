@@ -116,7 +116,7 @@ const CtaSection = () => {
   };
 
   return (
-    <div className="relative bg-saas-black pt-2 pb-16 md:pb-20 overflow-hidden">
+    <div id="contact-form" className="relative bg-saas-black pt-2 pb-16 md:pb-20 overflow-hidden">
       <style dangerouslySetInnerHTML={{ __html: glowStyles }} />
       <div className="absolute inset-0 bg-gradient-to-b from-saas-black to-saas-darkGray/50 -z-10"></div>
       <div className="section-container">
@@ -126,11 +126,11 @@ const CtaSection = () => {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
           
           <div className="relative z-10">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <div className="text-center mb-6 md:mb-8">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 md:mb-4 leading-tight">
                 Ready to Achieve 24/7 - <span className="text-saas-orange">Unfazed </span>Growth?
               </h2>
-              <p className="text-gray-300 max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto">
                 Start the conversation. Tell us your biggest pain point, and we'll map your <span className="font-bold">ROI</span> plan.
               </p>
             </div>
@@ -148,7 +148,7 @@ const CtaSection = () => {
                       value={formData.name}
                       onChange={handleChange}
                       className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
-                      placeholder="John Doe"
+                      placeholder="Ansh Thakur"
                     />
                   </div>
                 </div>
@@ -164,7 +164,7 @@ const CtaSection = () => {
                       value={formData.email}
                       onChange={handleChange}
                       className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
-                      placeholder="you@company.com"
+                      placeholder="unfazed@ai.online"
                     />
                   </div>
                 </div>
@@ -231,7 +231,7 @@ const CtaSection = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
-                    placeholder="Help us understand your specific requirements..."
+                    placeholder="Eg. I need to automate my lead generation process to improve sales efficiency."
                   />
                 </div>
               </div>

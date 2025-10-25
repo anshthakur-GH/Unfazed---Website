@@ -4,19 +4,23 @@ import React, { useEffect, useRef } from 'react';
 interface Testimonial {
   text: string;
   author: string;
-  image: string;
+  image?: string;
+  useInitials?: boolean;
+  initials?: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     text: "We reclaimed 20+ hours a week instantly. Our team is finally focused on strategy, not spreadsheets. Highly recommended.",
     author: "Samantha K.",
-    image: "https://randomuser.me/api/portraits/women/45.jpg"
+    useInitials: true,
+    initials: "SK"
   },
   {
     text: "The implementation of the n8n flows was flawless. We saw a 3X increase in lead follow-up within the first month. Incredible results.",
     author: "Rajesh P.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
+    useInitials: true,
+    initials: "RP"
   },
   {
     text: "I used to lose sleep over system breakdowns. Now, our operations are running 24/7 without an issue. The best investment this year.",
@@ -36,7 +40,7 @@ const testimonials: Testimonial[] = [
   {
     text: "Our lead qualification process was a mess. Unfazed built us a system that eliminated data errors and guaranteed pipeline quality.",
     author: "Elena R.",
-    image: "https://randomuser.me/api/portraits/women/33.jpg"
+    image: "https://randomuser.me/api/portraits/med/women/68.jpg"
   },
   {
     text: "The ROI was measurable almost immediately. We are earning money while we sleep—a massive shift in our business model.",
@@ -73,16 +77,22 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => (
     
     <div className="flex items-center pt-2 border-t border-gray-800">
       <div className="relative">
-        <img 
-          src={testimonial.image}
-          alt={testimonial.author}
-          className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full object-cover border border-saas-orange/50"
-          loading="lazy"
-          onError={(e) => {
-            // Fallback to a default avatar if the image fails to load
-            e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.author)}&background=FF8A00&color=fff&size=128`;
-          }}
-        />
+        {testimonial.useInitials ? (
+          <div className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-saas-orange/20 flex items-center justify-center border border-saas-orange/50">
+            <span className="text-saas-orange font-medium text-sm sm:text-base">{testimonial.initials}</span>
+          </div>
+        ) : (
+          <img 
+            src={testimonial.image}
+            alt={testimonial.author}
+            className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full object-cover border border-saas-orange/50"
+            loading="lazy"
+            onError={(e) => {
+              // Fallback to a default avatar if the image fails to load
+              e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.author)}&background=FF8A00&color=fff&size=128`;
+            }}
+          />
+        )}
       </div>
       <div className="ml-2">
         <p className="text-xs sm:text-sm font-medium text-white">{testimonial.author}</p>

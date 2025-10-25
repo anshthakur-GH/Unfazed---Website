@@ -38,11 +38,11 @@ const FaqSection = () => {
   return (
     <div className="bg-saas-black pb-0">
       <div className="section-container">
-        <div className="text-center max-w-3xl mx-auto mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+        <div className="text-center max-w-3xl mx-auto mb-6 md:mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-white">
             Frequently Asked <span className="text-saas-orange">Questions</span>
           </h2>
-          <p className="text-gray-400 font-medium">
+          <p className="text-sm sm:text-base text-gray-400 font-medium">
             Get clarity on our AI & automation services before you start earning 24/7
           </p>
         </div>
@@ -80,14 +80,14 @@ const FaqSection = () => {
           }
         `}</style>
         
-        <div className="max-w-3xl mx-auto bg-saas-darkGray/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 glowing-border">
-          <Accordion type="single" collapsible className="space-y-4">
+        <div className="max-w-3xl mx-auto bg-saas-darkGray/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 glowing-border">
+          <Accordion type="single" collapsible className="space-y-2 sm:space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-800 last:border-0">
-                <AccordionTrigger className="text-left text-white hover:text-saas-orange py-4">
+                <AccordionTrigger className="text-left text-sm sm:text-base text-white hover:text-saas-orange py-2 sm:py-3 md:py-4">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-400 pb-4">
+                <AccordionContent className="text-xs sm:text-sm text-gray-400 pb-2 sm:pb-3 md:pb-4">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

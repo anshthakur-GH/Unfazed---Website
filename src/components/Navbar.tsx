@@ -49,6 +49,19 @@ const Navbar = () => {
               >
                 Services
               </button>
+              <button
+                onClick={() => {
+                  const element = document.getElementById('about-section');
+                  if (element) {
+                    const yOffset = -80;
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                  }
+                }}
+                className="px-4 py-2 text-sm font-medium text-white hover:text-saas-orange transition-colors rounded-full"
+              >
+                About Us
+              </button>
               <div className="hidden md:block ml-4">
                 <Button 
                   variant="outline" 
@@ -129,6 +142,18 @@ const Navbar = () => {
                 className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
               >
                 Services
+              </button>
+              <button
+                onClick={() => {
+                  const element = document.getElementById('about-section');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    toggleMenu();
+                  }
+                }}
+                className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
+              >
+                About Us
               </button>
               <Button 
                 variant="outline" 

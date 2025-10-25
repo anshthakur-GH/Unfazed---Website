@@ -72,7 +72,7 @@ const Footer = () => {
           </div>
           
           {/* Right side - Navigation links */}
-          <div className="flex flex-col md:flex-row gap-12 justify-end w-full md:w-1/3 lg:w-1/4">
+          <div className="grid grid-cols-2 gap-8 md:flex md:flex-row md:gap-12 justify-end w-full md:w-1/3 lg:w-1/4">
             {/* Company links */}
             <div className="text-center md:text-right">
               <h3 className="text-lg font-semibold mb-4">Company</h3>
