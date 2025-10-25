@@ -1,47 +1,13 @@
-# Saasland – SaaS & Startup React JS Template
-
-#### Preview
-
-- [Demo](https://themewagon.github.io/saasland/)
-
-#### Download
-
-- [Download from ThemeWagon](https://themewagon.com/themes/saasland/)
-
-## Getting Started
-
-1. Clone Repository
-
-```
-git clone https://github.com/themewagon/saasland.git
-```
-
-2. Install Dependencies
-
-```
-npm i
-```
-
-3. Run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-## Author
-
-```
-Design and code is completely written by Codescandy and development team.
-```
-
-## License
-
-- Design and Code is Copyright &copy; [Codescandy](https://codescandy.com/)
-- Licensed cover under [MIT]
-- Distributed by [ThemeWagon](https://themewagon.com)
+Creating a thorough README.md is essential for any project. Based on your work building the Unfazed AI & Automation Agency landing page with React/Next.js and a focus on $\mathbf{n8n}$, here is a complete, well-structured template.🚀Unfazed AI & $\mathbf{n8n}$ Automation Agency Landing PageAbout the ProjectThis is the official landing page repository for Unfazed, an agency specializing in building high-impact, $\mathbf{24/7}$ business automation systems using AI and the n8n workflow platform. The site is designed for high SEO performance, rapid load times, and maximum conversion through clear value propositions and pain-point marketing.Core TechnologiesFramework: Next.js (React)Styling: Tailwind CSSDeployment: (Specify your hosting platform, e.g., Vercel, Netlify, AWS)Languages: TypeScript, JavaScriptKey FeaturesSEO Optimized: Uses clear, results-driven H1s and Meta tags (e.g., $\mathbf{90\%}$ Time Savings, $\mathbf{24/7}$ Earning).High-Conversion Layout: Features a powerful comparison table demonstrating the high cost of manual processes vs. the $\mathbf{ROI}$ of automation.Custom $\mathbf{n8n}$ Roadmap: A unique, three-step visual roadmap showing the tailored implementation process.Dynamic Components: Animated logo slideshow and CSS-based animated border effects (if implemented).💻 Getting StartedFollow these steps to set up the project locally.PrerequisitesYou need to have Node.js and npm (or yarn/pnpm) installed.Bash# Check Node.js version
+node -v
+InstallationClone the repository:Bashgit clone [Your Repository URL]
+Navigate to the project directory:Bashcd unfazed-agency-website
+Install dependencies:Bashnpm install
+# or yarn install
+▶️ DevelopmentRunning the Development ServerTo start the local development server:Bashnpm run dev
+# or yarn dev
+The application will be accessible at http://localhost:3000.Building for ProductionTo create an optimized production build:Bashnpm run build
+# or yarn build
+Running the Production Build LocallyTo test the optimized build:Bashnpm run start
+# or yarn start
+📁 Project Structure (Key Files)File/FolderPurposepublic/Static assets: logos, favicon, and other assets referenced by /. Images for the logo slideshow are here.src/components/All reusable React components (e.g., HeroSection.tsx, LogoSlideshow.tsx, CtaSection.tsx).src/app/Next.js App Router root layout and pages. The main landing page is here (page.tsx).tailwind.config.tsTailwind CSS configuration, including custom colors and spacing.next.config.jsNext.js specific configuration settings.🎨 StylingThis project uses Tailwind CSS for utility-first styling. Ensure you use the provided utility classes and follow the configuration in tailwind.config.ts for consistent branding.Styling Fixes AddressedImage Paths: All static image paths must start with a / and match file case (e.g., /logo1.png).Equal Card Height: Card components (e.g., in the comparison section) use flex/grid properties (h-full, flex-grow) to ensure visual alignment.
