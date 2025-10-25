@@ -40,10 +40,13 @@ const HeroSection = () => {
               </p>
               
               <div className="flex justify-center mb-12">
-                <Button className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-base">
+                <a 
+                  href="#contact-form"
+                  className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-base inline-flex items-center"
+                >
                   Get Unfazed Today
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                </a>
               </div>
               
               <div className="flex items-center justify-center gap-4 mb-40">

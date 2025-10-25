@@ -147,11 +147,11 @@ const TestimonialsSection = () => {
   const duplicatedSecondRow = [...secondRowTestimonials, ...secondRowTestimonials];
 
   return (
-    <div className="bg-saas-black pt-16 pb-20 overflow-hidden">
+    <div id="testimonials-section" className="bg-saas-black pt-16 pb-20 overflow-hidden">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-            Trusted by <span className="text-saas-orange">250+</span> Businesses
+            Trusted by <span className="text-saas-orange">250+</span> Businesses with <span className="text-saas-orange">98% </span>retention.
           </h2>
           <p className="text-gray-400 font-medium">
             Don't just take our word for it. Here's what our customers have to say about Unfazed.
