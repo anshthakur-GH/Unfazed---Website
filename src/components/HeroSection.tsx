@@ -71,25 +71,37 @@ const HeroSection = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-16 sm:mb-24 md:mb-32 lg:mb-40">
                 <div className="flex -space-x-2 sm:-space-x-3">
                   <img 
-                    src="/logo1.png" 
+                    src="https://randomuser.me/api/portraits/men/32.jpg" 
                     className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-saas-black object-cover" 
-                    alt="Client logo 1" 
+                    alt="Rajesh P." 
+                    title="Rajesh P., CEO, TechStart"
                     loading="lazy"
                     width={40}
                     height={40}
                   />
                   <img 
-                    src="/logo2.png" 
+                    src="https://randomuser.me/api/portraits/women/45.jpg" 
                     className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-saas-black object-cover" 
-                    alt="Client logo 2"
+                    alt="Samantha K."
+                    title="Samantha K., Operations Director"
                     loading="lazy"
                     width={40}
                     height={40}
                   />
                   <img 
-                    src="/logo3.png" 
+                    src="https://randomuser.me/api/portraits/men/67.jpg" 
                     className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-saas-black object-cover" 
-                    alt="Client logo 3"
+                    alt="Michael T."
+                    title="Michael T., CTO"
+                    loading="lazy"
+                    width={40}
+                    height={40}
+                  />
+                  <img 
+                    src="https://randomuser.me/api/portraits/women/33.jpg" 
+                    className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-saas-black object-cover hidden sm:block" 
+                    alt="Elena R."
+                    title="Elena R., Sales Director"
                     loading="lazy"
                     width={40}
                     height={40}
@@ -110,62 +122,70 @@ const HeroSection = () => {
           </div>
 
           {/* Why Choose Unfazed Section */}
-          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-20 relative z-10">
-            {/* Glowing Border Animation */}
-            <style jsx>{`
-              @keyframes border-glow {
-                0%, 100% {
-                  border-color: rgba(255, 138, 0, 0.3);
-                  box-shadow: 0 0 5px rgba(255, 138, 0, 0.1);
+          <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 py-12 md:py-20 relative z-10">
+            <style dangerouslySetInnerHTML={{
+              __html: `
+                @keyframes border-glow {
+                  0%, 100% {
+                    border-color: rgba(255, 138, 0, 0.3);
+                    box-shadow: 0 0 5px rgba(255, 138, 0, 0.1);
+                  }
+                  25% {
+                    border-color: rgba(229, 46, 113, 0.3);
+                    box-shadow: 0 0 5px rgba(229, 46, 113, 0.1);
+                  }
+                  50% {
+                    border-color: rgba(35, 166, 213, 0.3);
+                    box-shadow: 0 0 5px rgba(35, 166, 213, 0.1);
+                  }
+                  75% {
+                    border-color: rgba(35, 213, 171, 0.3);
+                    box-shadow: 0 0 5px rgba(35, 213, 171, 0.1);
+                  }
                 }
-                25% {
-                  border-color: rgba(229, 46, 113, 0.3);
-                  box-shadow: 0 0 5px rgba(229, 46, 113, 0.1);
+                .glowing-border {
+                  position: relative;
+                  border: 1px solid transparent;
+                  border-radius: 0.75rem;
+                  animation: border-glow 12s linear infinite;
+                  background: transparent;
+                  transition: all 0.3s ease;
                 }
-                50% {
-                  border-color: rgba(35, 166, 213, 0.3);
-                  box-shadow: 0 0 5px rgba(35, 166, 213, 0.1);
+                @media (min-width: 768px) {
+                  .glowing-border:hover {
+                    transform: translateY(-1px);
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+                  }
                 }
-                75% {
-                  border-color: rgba(35, 213, 171, 0.3);
-                  box-shadow: 0 0 5px rgba(35, 213, 171, 0.1);
-                }
-              }
-              .glowing-border {
-                position: relative;
-                border: 1px solid transparent;
-                border-radius: 1rem;
-                animation: border-glow 12s linear infinite;
-                background: transparent;
-                transition: all 0.3s ease;
-              }
-              .glowing-border:hover {
-                transform: translateY(-1px);
-                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-              }
-            `}</style>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              `
+            }} />
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-white">
                 Why Choose <span className="text-saas-orange">Unfazed?</span>
               </h2>
-              <p className="text-white max-w-2xl mx-auto font-medium">
+              <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto px-2">
                 See how we stack up against traditional solutions
               </p>
             </div>
 
-            <div className="relative">
-              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-2xl overflow-hidden">
-              {/* Table Header */}
-              <div className="grid grid-cols-12 bg-saas-black/80 border-b border-gray-800">
-                <div className="col-span-5 p-6"></div>
-                <div className="col-span-3 p-6 text-center">
-                  <h3 className="text-lg font-bold text-white">Traditional Solutions</h3>
-                  <p className="text-sm text-gray-400 mt-1">Manual or Outdated</p>
+            <div className="relative overflow-x-auto">
+              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-xl md:rounded-2xl overflow-hidden min-w-[320px]">
+              {/* Table Header - Desktop */}
+              <div className="hidden md:grid grid-cols-12 bg-saas-black/80 border-b border-gray-800">
+                <div className="col-span-5 p-4 md:p-6"></div>
+                <div className="col-span-3 p-4 md:p-6 text-center">
+                  <h3 className="text-base md:text-lg font-bold text-white">Traditional</h3>
+                  <p className="text-xs md:text-sm text-gray-400 mt-1">Manual or Outdated</p>
                 </div>
-                <div className="col-span-4 p-6 text-center bg-saas-orange/10">
-                  <h3 className="text-lg font-bold text-saas-orange">Unfazed</h3>
-                  <p className="text-sm text-saas-orange/80 mt-1">AI-Powered Automation</p>
+                <div className="col-span-4 p-4 md:p-6 text-center bg-saas-orange/10">
+                  <h3 className="text-base md:text-lg font-bold text-saas-orange">Unfazed</h3>
+                  <p className="text-xs md:text-sm text-saas-orange/80 mt-1">AI-Powered</p>
                 </div>
+              </div>
+              
+              {/* Mobile Header */}
+              <div className="md:hidden bg-saas-black/80 border-b border-gray-800 p-4">
+                <h3 className="text-lg font-bold text-center text-white">Why Choose Unfazed?</h3>
               </div>
 
               {/* Table Rows */}
@@ -174,25 +194,25 @@ const HeroSection = () => {
                   feature: 'Implementation Time',
                   traditional: 'Weeks to Months',
                   unfazed: 'Days',
-                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://wwwwww.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  icon: <svg className="w-4 h-4 sm:w-5 sm:h-5 text-saas-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 },
                 {
                   feature: 'Cost Efficiency',
                   traditional: 'High Overhead',
                   unfazed: 'Cost-Effective',
-                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  icon: <svg className="w-4 h-4 sm:w-5 sm:h-5 text-saas-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 },
                 {
                   feature: 'Scalability',
                   traditional: 'Limited by Resources',
                   unfazed: 'Infinitely Scalable',
-                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                  icon: <svg className="w-4 h-4 sm:w-5 sm:h-5 text-saas-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
                 },
                 {
                   feature: 'Availability',
                   traditional: 'Business Hours',
                   unfazed: '24/7/365',
-                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  icon: <svg className="w-4 h-4 sm:w-5 sm:h-5 text-saas-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 },
                 {
                   feature: 'Human Error',
@@ -201,20 +221,35 @@ const HeroSection = () => {
                   icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 }
               ].map((item, index) => (
-                <div key={index} className="grid grid-cols-12 border-b border-gray-800 last:border-b-0 hover:bg-saas-black/30 transition-colors">
-                  <div className="col-span-5 p-6 flex items-center">
-                    <div className="w-10 h-10 rounded-full bg-saas-orange/10 flex items-center justify-center mr-4">
-                      {item.icon}
+                <React.Fragment key={index}>
+                  {/* Desktop View */}
+                  <div className="hidden md:grid grid-cols-12 group hover:bg-saas-black/40 transition-colors">
+                    <div className="col-span-5 p-3 md:p-4 flex items-center">
+                      <span className="mr-2 md:mr-3">{item.icon}</span>
+                      <span className="text-xs sm:text-sm md:text-base font-medium text-gray-200">{item.feature}</span>
                     </div>
-                    <span className="font-medium text-white">{item.feature}</span>
+                    <div className="col-span-3 p-3 md:p-4 flex items-center justify-center border-l border-gray-800">
+                      <span className="text-xs sm:text-sm md:text-base text-gray-300">{item.traditional}</span>
+                    </div>
+                    <div className="col-span-4 p-3 md:p-4 flex items-center justify-center bg-saas-orange/5 border-l border-gray-800">
+                      <span className="text-xs sm:text-sm md:text-base font-medium text-saas-orange">{item.unfazed}</span>
+                    </div>
                   </div>
-                  <div className="col-span-3 p-6 flex items-center justify-center text-center text-gray-400">
-                    {item.traditional}
+                  
+                  {/* Mobile View */}
+                  <div className="md:hidden border-b border-gray-800 last:border-b-0">
+                    <div className="p-3 flex items-start">
+                      <div className="mr-3 mt-0.5">{item.icon}</div>
+                      <div className="flex-1">
+                        <div className="font-medium text-sm text-white mb-1">{item.feature}</div>
+                        <div className="flex justify-between text-xs">
+                          <div className="text-gray-400">{item.traditional}</div>
+                          <div className="text-saas-orange font-medium">{item.unfazed}</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="col-span-4 p-6 flex items-center justify-center text-center text-saas-orange font-medium bg-saas-orange/5">
-                    {item.unfazed}
-                  </div>
-                </div>
+                </React.Fragment>
               ))}
               </div>
             </div>
