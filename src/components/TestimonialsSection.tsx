@@ -5,27 +5,27 @@ const testimonials = [
   {
     text: "We reclaimed 20+ hours a week instantly. Our team is finally focused on strategy, not spreadsheets. Highly recommended.",
     author: "Samantha K.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100"
+    image: "/logo1.png"
   },
   {
     text: "The implementation of the n8n flows was flawless. We saw a 3X increase in lead follow-up within the first month. Incredible results.",
     author: "Rajesh P.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100"
+    image: "/logo2.png"
   },
   {
     text: "I used to lose sleep over system breakdowns. Now, our operations are running 24/7 without an issue. The best investment this year.",
     author: "Michael T.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100"
+    image: "/logo3.png"
   },
   {
     text: "They helped us use AI to completely automate our invoicing. Our financial reporting accuracy is now 100%. Stress-free cash flow.",
     author: "Priya M.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&h=100"
+    image: "/logo4.png"
   },
   {
     text: "From endless manual work to 90% automation in weeks. This allowed us to scale without hiring new staff. Pure efficiency.",
     author: "David L.",
-    image: "https://ui-avatars.com/api/?name=David+L&background=FF8A00&color=fff&size=100"
+    image: "/logo5.png"
   },
   {
     text: "Our lead qualification process was a mess. Unfazed built us a system that eliminated data errors and guaranteed pipeline quality.",
