@@ -34,7 +34,7 @@ const HeroSection = () => {
               </div>
               
               {/* Main Heading */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 tracking-tight leading-tight">
                 Save 80% Time, Earn 24/7 with{' '}
                 <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
                   Automations
@@ -122,7 +122,7 @@ const HeroSection = () => {
           </div>
 
           {/* Why Choose Unfazed Section */}
-          <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 py-12 md:py-20 relative z-10">
+          <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 py-8 md:py-16 relative z-10">
             <style dangerouslySetInnerHTML={{
               __html: `
                 @keyframes border-glow {
@@ -159,17 +159,17 @@ const HeroSection = () => {
                 }
               `
             }} />
-            <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 text-white">
+            <div className="text-center mb-6 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-white">
                 Why Choose <span className="text-saas-orange">Unfazed?</span>
               </h2>
-              <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto px-2">
+              <p className="text-xs sm:text-sm text-gray-300 max-w-2xl mx-auto px-2">
                 See how we stack up against traditional solutions
               </p>
             </div>
 
             <div className="relative overflow-x-auto">
-              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-xl md:rounded-2xl overflow-hidden min-w-[320px]">
+              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-xl md:rounded-2xl overflow-hidden min-w-[280px]">
               {/* Table Header - Desktop */}
               <div className="hidden md:grid grid-cols-12 bg-saas-black/80 border-b border-gray-800">
                 <div className="col-span-5 p-4 md:p-6"></div>
@@ -182,22 +182,27 @@ const HeroSection = () => {
                   <p className="text-xs md:text-sm text-saas-orange/80 mt-1">AI-Powered</p>
                 </div>
               </div>
+              {/* Mobile Header - Only shows Unfazed */}
+              <div className="md:hidden grid grid-cols-12 bg-saas-black/80 border-b border-gray-800">
+                <div className="col-span-8 p-4"></div>
+                <div className="col-span-4 p-4 text-center bg-saas-orange/10">
+                  <h3 className="text-base font-bold text-saas-orange">Unfazed</h3>
+                  <p className="text-xs text-saas-orange/80 mt-1">AI-Powered</p>
+                </div>
+              </div>
               
               {/* Mobile Header */}
-              <div className="md:hidden bg-saas-black/80 border-b border-gray-800 p-4">
-                <h3 className="text-lg font-bold text-center text-white">Why Choose Unfazed?</h3>
-              </div>
 
               {/* Table Rows */}
               {[
                 {
-                  feature: 'Implementation Time',
+                  feature: 'Implementation',
                   traditional: 'Weeks to Months',
                   unfazed: 'Days',
                   icon: <svg className="w-4 h-4 sm:w-5 sm:h-5 text-saas-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 },
                 {
-                  feature: 'Cost Efficiency',
+                  feature: 'Cost',
                   traditional: 'High Overhead',
                   unfazed: 'Cost-Effective',
                   icon: <svg className="w-4 h-4 sm:w-5 sm:h-5 text-saas-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
@@ -256,42 +261,42 @@ const HeroSection = () => {
           </div>
 
           {/* Where We Drive 24/7 Growth */}
-          <div id="services-section" className="w-full max-w-[2000px] mx-auto px-4 sm:px-6 py-20 relative z-10">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+          <div id="services-section" className="w-full max-w-[2000px] mx-auto px-3 sm:px-4 py-12 md:py-16 relative z-10">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-white">
                 Where We Drive <span className="text-saas-orange">24/7 </span>Growth
               </h2>
-              <p className="text-white max-w-2xl mx-auto font-medium">
+              <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto px-2">
                 Automating your success around the clock with precision and care
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[2000px] mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-[2000px] mx-auto">
               {/* Lead Generation Card */}
-              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-saas-orange/50 transition-colors h-full">
-                <div className="w-12 h-12 rounded-lg bg-saas-orange/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 border border-gray-800 hover:border-saas-orange/50 transition-colors h-full">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-saas-orange/10 flex items-center justify-center mb-3 sm:mb-4">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M12 16h.01M16 12h.01M8 12h.01M3 20h18a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Lead Generation</h3>
-                <p className="text-gray-300 text-sm">Automated lead capture and qualification that works while you sleep, filling your pipeline with high-quality prospects.</p>
+                <h3 className="text-xl font-bold text-white mb-2 sm:mb-3">Lead Generation</h3>
+                <p className="text-xs sm:text-sm text-gray-300">Automated lead capture and qualification that works while you sleep, filling your pipeline with high-quality prospects.</p>
               </div>
 
               {/* Project Management Card */}
-              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-saas-orange/50 transition-colors h-full">
-                <div className="w-12 h-12 rounded-lg bg-saas-orange/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 border border-gray-800 hover:border-saas-orange/50 transition-colors h-full">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-saas-orange/10 flex items-center justify-center mb-3 sm:mb-4">
+                  <svg className="w-5 h-5 sm:w-6 sm:h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">AI-Powered Creative Studio </h3>
-                <p className="text-gray-300 text-sm">Instantly generate UGC ad creatives and campaign variations using specialized AI. Slash testing costs and boost conversion rates.</p>
+                <h3 className="text-xl font-bold text-white mb-2 sm:mb-3">AI-Powered Creative Studio</h3>
+                <p className="text-xs sm:text-sm text-gray-300">Instantly generate UGC ad creatives and campaign variations using specialized AI. Slash testing costs and boost conversion rates.</p>
               </div>
               
               {/* Your Tailored Automation Roadmap */}
-              <div className="glowing-border md:col-span-2 bg-saas-black/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 transition-colors w-full">
-                <h3 className="text-2xl font-bold text-white mb-8 text-center">
+              <div className="glowing-border md:col-span-2 bg-saas-black/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-800 transition-colors w-full">
+                <h3 className="text-2xl font-bold text-white mb-4 sm:mb-6 text-center">
                   Your <span className="text-saas-orange">Automation </span>Roadmap
                 </h3>
                 

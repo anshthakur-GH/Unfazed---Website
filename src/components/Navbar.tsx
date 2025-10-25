@@ -11,16 +11,16 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 w-full max-w-4xl z-50 px-4">
+    <div className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 w-full max-w-4xl z-50 px-3 sm:px-4">
       <div className="w-full">
         <div className="animated-border">
           <nav className="bg-saas-black/80 backdrop-blur-lg rounded-full border border-saas-darkGray/20 shadow-lg">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex justify-between h-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex justify-between h-12 sm:h-16 items-center">
             {/* Logo - Left side */}
             <div className="flex-shrink-0">
               <Link to="/" className="flex items-center">
-                <span className="text-2xl font-bold bg-gradient-to-r from-saas-orange to-amber-500 bg-clip-text text-transparent">
+                <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-saas-orange to-amber-500 bg-clip-text text-transparent">
                   Unfazed
                 </span>
               </Link>
@@ -49,30 +49,50 @@ const Navbar = () => {
               >
                 Services
               </button>
+              <div className="hidden md:block">
+                <Button 
+                  variant="outline" 
+                  onClick={() => {
+                    const element = document.getElementById('contact-form');
+                    if (element) {
+                      const yOffset = -80; // Adjust this value based on your navbar height
+                      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                  }}
+                  className="border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors"
+                >
+                  <span className="inline-flex items-center">
+                    <Phone className="w-4 h-4 mr-2 animate-vibrate origin-center" />
+                    Let's talk
+                  </span>
+                </Button>
+              </div>
+            </div>
+
+            {/* Mobile menu and CTA buttons */}
+            <div className="flex items-center space-x-2">
               <Button 
                 variant="outline" 
                 onClick={() => {
                   const element = document.getElementById('contact-form');
                   if (element) {
-                    const yOffset = -80; // Adjust this value based on your navbar height
+                    const yOffset = -80;
                     const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
                     window.scrollTo({ top: y, behavior: 'smooth' });
                   }
                 }}
-                className="ml-4 border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors"
+                className="md:hidden border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors h-9 px-3 text-xs sm:text-sm"
               >
                 <span className="inline-flex items-center">
-                  <Phone className="w-4 h-4 mr-2 animate-vibrate origin-center" />
+                  <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1 animate-vibrate origin-center" />
                   Let's talk
                 </span>
               </Button>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden flex items-center">
+              
               <button
                 onClick={toggleMenu}
-                className="inline-flex items-center justify-center p-2 rounded-md text-white focus:outline-none"
+                className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-white focus:outline-none"
                 aria-label="Toggle menu"
               >
                 {isOpen ? (
