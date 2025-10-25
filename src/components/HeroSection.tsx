@@ -7,7 +7,7 @@ const LogoSlideshow = lazy(() => import('./LogoSlideshow'));
 
 const HeroSection = () => {
   return (
-    <div className="relative overflow-hidden pt-20 md:pt-24">
+    <div className="relative overflow-hidden pt-20 md:pt-24 pb-12 md:pb-16">
       {/* Top Gradient Section */}
       <div className="absolute inset-0 bg-gradient-to-b from-saas-black to-transparent -z-10 h-[700px] md:h-[800px]"></div>
       
@@ -178,16 +178,14 @@ const HeroSection = () => {
                   <p className="text-xs md:text-sm text-gray-400 mt-1">Manual or Outdated</p>
                 </div>
                 <div className="col-span-4 p-4 md:p-6 text-center bg-saas-orange/10">
-                  <h3 className="text-base md:text-lg font-bold text-saas-orange">Unfazed</h3>
-                  <p className="text-xs md:text-sm text-saas-orange/80 mt-1">AI-Powered</p>
+                  <h3 className="text-base md:text-lg font-bold text-saas-orange">With Unfazed</h3>
                 </div>
               </div>
               {/* Mobile Header - Only shows Unfazed */}
               <div className="md:hidden grid grid-cols-12 bg-saas-black/80 border-b border-gray-800">
                 <div className="col-span-8 p-4"></div>
                 <div className="col-span-4 p-4 text-center bg-saas-orange/10">
-                  <h3 className="text-base font-bold text-saas-orange">Unfazed</h3>
-                  <p className="text-xs text-saas-orange/80 mt-1">AI-Powered</p>
+                  <h3 className="text-base font-bold text-saas-orange">With Unfazed</h3>
                 </div>
               </div>
               

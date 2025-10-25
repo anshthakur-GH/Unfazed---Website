@@ -116,7 +116,7 @@ const CtaSection = () => {
   };
 
   return (
-    <div id="contact-form" className="bg-saas-black py-16 md:py-20 relative">
+    <div className="relative bg-saas-black pt-2 pb-16 md:pb-20 overflow-hidden">
       <style dangerouslySetInnerHTML={{ __html: glowStyles }} />
       <div className="absolute inset-0 bg-gradient-to-b from-saas-black to-saas-darkGray/50 -z-10"></div>
       <div className="section-container">

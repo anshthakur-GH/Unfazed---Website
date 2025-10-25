@@ -164,9 +164,9 @@ const TestimonialsSection = () => {
   const duplicatedSecondRow = [...secondRowTestimonials, ...secondRowTestimonials];
 
   return (
-    <div id="testimonials-section" className="bg-saas-black pt-16 pb-20 overflow-hidden">
+    <div id="testimonials-section" className="bg-saas-black pt-10 pb-12 md:pt-12 md:pb-16 overflow-hidden">
       <div className="section-container">
-        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 px-4">
+        <div className="text-center max-w-3xl mx-auto mb-6 md:mb-8 px-4">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4 text-white">
             Trusted by <span className="text-saas-orange">250+</span> Businesses with <span className="text-saas-orange">98% </span>retention.
           </h2>
