@@ -60,6 +60,12 @@ const Navbar = () => {
               >
                 Contact
               </Link>
+              <Button 
+                variant="outline" 
+                className="ml-4 border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors"
+              >
+                Let's talk
+              </Button>
             </div>
 
             {/* Mobile menu button */}
@@ -111,6 +117,13 @@ const Navbar = () => {
               >
                 Contact
               </Link>
+              <Button 
+                variant="outline" 
+                className="w-full mt-2 border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors"
+                onClick={toggleMenu}
+              >
+                Let's talk
+              </Button>
             </div>
           </div>
         )}

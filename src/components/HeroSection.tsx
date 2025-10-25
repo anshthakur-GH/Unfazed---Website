@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -13,9 +13,21 @@ const HeroSection = () => {
       <div className="section-container relative z-10 text-center">
         <div className="flex flex-col items-center justify-center max-w-4xl mx-auto">
           <div className="animate-fade-in">
-            <span className="inline-block bg-saas-orange/10 text-saas-orange px-4 py-2 rounded-full text-sm font-medium mb-6 border border-saas-orange/20">
-              Introducing Unfazed 2.0
-            </span>
+            <div className="inline-flex items-center bg-saas-orange/10 text-saas-orange px-4 py-2 rounded-full text-sm font-medium mb-6 border border-saas-orange/20">
+              <div className="flex items-center mr-2">
+                {[...Array(4)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" />
+                ))}
+                <div className="relative h-4 w-4">
+                  <Star className="h-4 w-4 text-gray-300" />
+                  <div className="absolute left-0 top-0 w-1/2 h-full overflow-hidden">
+                    <Star className="h-4 w-4 fill-current" />
+                  </div>
+                </div>
+              </div>
+              <span className="ml-1">4.5/5</span>
+              <span className="text-saas-orange/70 ml-1">Customer Rating</span>
+            </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
             Start Smarter, Scale Faster with <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Automations </span> &  <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent"> AI </span>
