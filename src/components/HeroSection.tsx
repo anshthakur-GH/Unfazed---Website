@@ -30,20 +30,17 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-            Start Smarter, Scale Faster with <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Automations </span> &  <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent"> AI </span>
+            Save 80% Time, Earn 24/7 with <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">Automations </span> &  <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">AI</span>
             </h1>
             
             <p className="text-lg md:text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
             We design AI-powered automation workflows that save time, cut costs, and scale your business 24/7 — turning repetitive tasks into profit-driving systems while you sleep.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">
-                Get Started Free
+            <div className="flex justify-center">
+              <Button className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-200 text-base">
+                Get Unfazed Today
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button variant="outline" className="border-saas-orange text-saas-orange hover:bg-saas-orange hover:text-white">
-                Book Demo
               </Button>
             </div>
             
@@ -57,12 +54,12 @@ const HeroSection = () => {
                   className="w-10 h-10 rounded-full border-2 border-saas-black" alt="User" />
               </div>
               <p className="text-sm text-gray-300">
-                <span className="font-semibold text-saas-orange">500+</span> businesses using our automations
+                <span className="font-semibold text-saas-orange">250+</span> businesses using our automations
               </p>
             </div>
           </div>
           
-          <div className="mt-16 animate-fade-in" style={{animationDelay: '0.5s'}}>
+          {/* <div className="mt-16 animate-fade-in" style={{animationDelay: '0.5s'}}>
             <div className="relative max-w-4xl mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-saas-orange to-orange-700 blur-xl opacity-20 rounded-xl"></div>
               <div className="relative bg-saas-darkGray rounded-xl border border-saas-orange/20 p-2 card-shadow transform transition-all duration-500 hover:scale-[1.01] hover:shadow-orange-500/10 hover:shadow-lg">
@@ -77,14 +74,12 @@ const HeroSection = () => {
                 />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       
       {/* Abstract shapes */}
-      <div className="absolute bottom-10 left-10 w-20 h-20 border border-saas-orange/20 rounded-full"></div>
-      <div className="absolute top-20 right-10 w-10 h-10 border border-saas-orange/20 rounded-full"></div>
-      <div className="absolute top-40 left-20 w-5 h-5 bg-saas-orange/20 rounded-full"></div>
+
     </div>
   );
 };
