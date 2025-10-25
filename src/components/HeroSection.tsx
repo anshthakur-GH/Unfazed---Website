@@ -1,13 +1,15 @@
 import React, { Suspense, lazy } from 'react';
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Star, Mic, Users, Zap, Search, UserPlus, MessageSquare, FileText, CreditCard, Headphones, Monitor, Bot, ClipboardCheck, FileCode } from 'lucide-react';
 
 // Lazy load the LogoSlideshow component
 const LogoSlideshow = lazy(() => import('./LogoSlideshow'));
 
 const HeroSection = () => {
   return (
-    <div className="relative bg-gradient-to-b from-saas-black to-[#1c160c] overflow-hidden pt-24">
+    <div className="relative overflow-hidden pt-20">
+      {/* Top Gradient Section */}
+      <div className="absolute inset-0 bg-gradient-to-b from-saas-black to-transparent -z-10 h-[800px]"></div>
       {/* Hero Content */}
       <div className="relative z-10">
         <div className="section-container py-12 md:py-16">
@@ -64,173 +66,257 @@ const HeroSection = () => {
                   <LogoSlideshow />
                 </Suspense>
               </div>
-            </div>
-          </div>
 
-          {/* Pricing Section */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Why Choose <span className="text-saas-orange">Unfazed?</span>
+          {/* Why Choose Unfazed Section */}
+          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-20 relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+                Why Choose <span className="text-saas-orange">Unfazed</span>
               </h2>
-              <p className="text-gray-400 max-w-2xl mx-auto">
-                Choose the plan that fits your business needs. No hidden fees, no surprises.
+              <p className="text-white max-w-2xl mx-auto font-medium">
+                See how we stack up against traditional solutions
               </p>
             </div>
 
-            <div className="w-full max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full">
-                {/* The Old Way */}
-                <div className="bg-saas-black/50 backdrop-blur-md rounded-xl p-8 border border-gray-800 flex flex-col h-full">
-                  <div className="flex-1 flex flex-col">
-                    <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold">The Old Way</h3>
-                    </div>
-                    <ul className="space-y-4 flex-1">
-                  {['Time: Wasted on manual tasks', 'Scale: Growth is capped by human capacity', 'Downtime: Processes stop at 5 PM', 'Support: Costly, slow human-only fixes', 'Workflows: Brittle, disconnected systems'].map((feature, index) => (
-                    <li key={index} className="flex items-start text-gray-200 text-base">
-                      <span className="text-saas-orange mr-3 mt-0.5 text-xl">×</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                    </ul>
-                  </div>
+            <div className="bg-saas-black/50 backdrop-blur-sm rounded-2xl border border-gray-800 overflow-hidden">
+              {/* Table Header */}
+              <div className="grid grid-cols-12 bg-saas-black/80 border-b border-gray-800">
+                <div className="col-span-5 p-6"></div>
+                <div className="col-span-3 p-6 text-center">
+                  <h3 className="text-lg font-bold text-white">Traditional Solutions</h3>
+                  <p className="text-sm text-gray-400 mt-1">Manual or Outdated</p>
                 </div>
-
-                {/* The Unfazed Way - Highlighted */}
-                <div className="relative bg-gradient-to-b from-saas-orange/20 to-saas-black/50 rounded-xl p-8 border border-saas-orange/30 flex flex-col h-full">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-saas-orange text-black text-xs font-medium px-4 py-1.5 rounded-full whitespace-nowrap">
-                    MOST POPULAR
-                  </div>
-                  <div className="flex-1 flex flex-col">
-                    <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold">The Unfazed Way</h3>
-                    </div>
-                    <ul className="space-y-4 flex-1">
-                  {[
-                    'Time: 80% admin time eliminated',
-                    'Scale:24/7 Unlimited capacity',
-                    'Accuracy: 99.9% data-integrity',
-                    'Uptime: Non-stop earning while you sleep',
-                    'Support: Automated monitoring and priority-alerts',
-                    'Workflows: Unbreakable AI-flows',
-                    'CTA: Unlock 24/7 Autopilot'
-                  ].map((feature, index) => (
-                    <li key={index} className="flex items-start text-gray-200 text-base">
-                      <span className="text-saas-orange mr-3 mt-0.5 text-xl">✓</span>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                    </ul>
-                    <div className="mt-8">
-                      <Button className="w-full bg-saas-orange hover:bg-saas-orange/90 h-12 text-base font-medium">
-                        Get Unfazed Today
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </div>
-                  </div>
+                <div className="col-span-4 p-6 text-center bg-saas-orange/10">
+                  <h3 className="text-lg font-bold text-saas-orange">Unfazed</h3>
+                  <p className="text-sm text-saas-orange/80 mt-1">AI-Powered Automation</p>
                 </div>
               </div>
+
+              {/* Table Rows */}
+              {[
+                {
+                  feature: 'Implementation Time',
+                  traditional: 'Weeks to Months',
+                  unfazed: 'Days',
+                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                },
+                {
+                  feature: 'Cost Efficiency',
+                  traditional: 'High Overhead',
+                  unfazed: 'Cost-Effective',
+                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                },
+                {
+                  feature: 'Scalability',
+                  traditional: 'Limited by Resources',
+                  unfazed: 'Infinitely Scalable',
+                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                },
+                {
+                  feature: 'Availability',
+                  traditional: 'Business Hours',
+                  unfazed: '24/7/365',
+                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                },
+                {
+                  feature: 'Human Error',
+                  traditional: 'Common',
+                  unfazed: 'Eliminated',
+                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                }
+              ].map((item, index) => (
+                <div key={index} className="grid grid-cols-12 border-b border-gray-800 last:border-b-0 hover:bg-saas-black/30 transition-colors">
+                  <div className="col-span-5 p-6 flex items-center">
+                    <div className="w-10 h-10 rounded-full bg-saas-orange/10 flex items-center justify-center mr-4">
+                      {item.icon}
+                    </div>
+                    <span className="font-medium text-white">{item.feature}</span>
+                  </div>
+                  <div className="col-span-3 p-6 flex items-center justify-center text-center text-gray-400">
+                    {item.traditional}
+                  </div>
+                  <div className="col-span-4 p-6 flex items-center justify-center text-center text-saas-orange font-medium bg-saas-orange/5">
+                    {item.unfazed}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
             </div>
           </div>
 
-          {/* Powerful Features Section */}
-          <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-20">
+          {/* Where We Drive 24/7 Growth Section */}
+          <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-               Where We Drive <span className="text-saas-orange">24/7</span> Growth
+                Where We Drive <span className="text-saas-orange">24/7</span> Growth
               </h2>
               <p className="text-white max-w-2xl mx-auto font-medium">
-                Explore our comprehensive suite of features designed to take your business to the next level
+                High-Impact Workflows That Solve Your Biggest Business Bottlenecks.
               </p>
             </div> 
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-4xl mx-auto">
               {/* Feature 1 */}
-              <div className="relative group">
-                <div className="overflow-hidden rounded-xl h-full shadow-lg">
-                  <div className="bg-black p-8 flex flex-col h-full">
-                    <div className="flex-1 flex flex-col">
-                      <div className="flex items-center mb-6">
-                        <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
-                          <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                          </svg>
-                        </div>
-                        <h3 className="text-xl font-bold text-white">Lead Generation</h3>
+              <div className="feature-card group">
+                <div className="feature-card-content bg-transparent p-8 flex flex-col h-full">
+                  <div className="flex-1 flex flex-col">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
                       </div>
-                      <p className="text-gray-300 text-sm">Automated lead capture and qualification to fill your pipeline with high-quality prospects 24/7.</p>
+                      <h3 className="text-xl font-bold text-white">Lead Generation</h3>
                     </div>
+                    <p className="text-gray-300 text-sm">Automated lead capture and qualification to fill your pipeline with high-quality prospects 24/7.</p>
                   </div>
                 </div>
               </div>
 
               {/* Feature 2 */}
-              <div className="relative group">
-                <div className="overflow-hidden rounded-xl h-full shadow-lg">
-                  <div className="bg-black p-8 flex flex-col h-full">
-                    <div className="flex-1 flex flex-col">
-                      <div className="flex items-center mb-6">
-                        <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
-                          <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                          </svg>
-                        </div>
-                        <h3 className="text-xl font-bold text-white">Project Management</h3>
+              <div className="feature-card group">
+                <div className="feature-card-content bg-transparent p-8 flex flex-col h-full">
+                  <div className="flex-1 flex flex-col">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
                       </div>
-                      <p className="text-gray-300 text-sm">Streamline your workflow with automated task tracking and team collaboration tools.</p>
+                      <h3 className="text-xl font-bold text-white">Project Management</h3>
                     </div>
+                    <p className="text-gray-300 text-sm">Streamline your workflow with automated task tracking and team collaboration tools.</p>
                   </div>
                 </div>
               </div>
 
               {/* Feature 3 */}
-              <div className="relative group">
-                <div className="overflow-hidden rounded-xl h-full shadow-lg">
-                  <div className="bg-black p-8 flex flex-col h-full">
-                    <div className="flex-1 flex flex-col">
-                      <div className="flex items-center mb-6">
-                        <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
-                          <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                          </svg>
-                        </div>
-                        <h3 className="text-xl font-bold text-white">Financial Automation</h3>
+              <div className="feature-card group">
+                <div className="feature-card-content bg-transparent p-8 flex flex-col h-full">
+                  <div className="flex-1 flex flex-col">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                       </div>
-                      <p className="text-gray-300 text-sm">Automate invoicing, expense tracking, and financial reporting for better cash flow management.</p>
+                      <h3 className="text-xl font-bold text-white">Financial Automation</h3>
                     </div>
+                    <p className="text-gray-300 text-sm mb-0">Automate invoicing, expense tracking, and financial reporting for better cash flow management.</p>
                   </div>
                 </div>
               </div>
 
               {/* Feature 4 */}
-              <div className="relative group">
-                <div className="overflow-hidden rounded-xl h-full shadow-lg">
-                  <div className="bg-black p-8 flex flex-col h-full">
-                    <div className="flex-1 flex flex-col">
-                      <div className="flex items-center mb-6">
-                        <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
-                          <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                          </svg>
-                        </div>
-                        <h3 className="text-xl font-bold text-white">Customer Support</h3>
+              <div className="feature-card group mt-0">
+                <div className="feature-card-content bg-transparent p-8 flex flex-col h-full">
+                  <div className="flex-1 flex flex-col">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
+                        <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
                       </div>
-                      <p className="text-gray-300 text-sm">24/7 automated customer support with AI-powered responses and ticket management.</p>
+                      <h3 className="text-xl font-bold text-white">Customer Support</h3>
                     </div>
+                    <p className="text-gray-300 text-sm mb-0">24/7 automated customer support with AI-powered responses and ticket management.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-saas-orange opacity-10 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-orange-700 opacity-15 rounded-full blur-[80px]"></div>
-        <div className="absolute top-20 right-1/4 w-[250px] h-[250px] bg-orange-400 opacity-10 rounded-full blur-[70px]"></div>
+          {/* Service Tags Slideshow */}
+          <div className="mt-8">
+            <div className="w-full py-12 overflow-hidden">
+              {/* First row - Right to Left */}
+              <div className="flex whitespace-nowrap mb-6">
+                <div className="animate-slideRightToLeft flex space-x-4">
+                  {[
+                    { name: 'Voice Agents', icon: <Mic className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'HR Management', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Lead Gen System', icon: <Zap className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'SEO Audit', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Onboarding', icon: <UserPlus className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'UGC Generation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'RAG Chatbots', icon: <Bot className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Payment System', icon: <CreditCard className="w-4 h-4 mr-2 text-saas-orange" /> }
+                  ].map((service, i) => (
+                    <div key={`row1-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-200 hover:border-saas-orange/50 transition-colors">
+                      {service.icon}
+                      {service.name}
+                    </div>
+                  ))}
+                  {[
+                    { name: 'Voice Agents', icon: <Mic className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'HR Management', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Lead Gen System', icon: <Zap className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'SEO Audit', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Onboarding', icon: <UserPlus className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'UGC Generation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'RAG Chatbots', icon: <Bot className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Payment System', icon: <CreditCard className="w-4 h-4 mr-2 text-saas-orange" /> }
+                  ].map((service, i) => (
+                    <div key={`row1-dup-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-200 hover:border-saas-orange/50 transition-colors">
+                      {service.icon}
+                      {service.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Second row - Left to Right */}
+              <div className="flex whitespace-nowrap">
+                <div className="animate-slideLeftToRight flex space-x-4">
+                  {[
+                    { name: 'Customer Support', icon: <Headphones className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'AD Creatives', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Custom CRMs', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Chatbots', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Research', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Youtube', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Social Media', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Monitoring', icon: <ClipboardCheck className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Document Mgmt', icon: <FileCode className="w-4 h-4 mr-2 text-saas-orange" /> }
+                  ].map((service, i) => (
+                    <div key={`row2-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-300 hover:border-saas-orange/50 transition-colors">
+                      {service.icon}
+                      {service.name}
+                    </div>
+                  ))}
+                  {[
+                    { name: 'Customer Support', icon: <Headphones className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'AD Creatives', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Custom CRMs', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Chatbots', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Research', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Youtube', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Social Media', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Monitoring', icon: <ClipboardCheck className="w-4 h-4 mr-2 text-saas-orange" /> },
+                    { name: 'Document Mgmt', icon: <FileCode className="w-4 h-4 mr-2 text-saas-orange" /> }
+                  ].map((service, i) => (
+                    <div key={`row2-dup-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-300 hover:border-saas-orange/50 transition-colors">
+                      {service.icon}
+                      {service.name}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Background elements */}
+          <div className="absolute inset-0 overflow-hidden -z-10">
+            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-saas-orange opacity-10 rounded-full blur-[100px]"></div>
+            <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-orange-700 opacity-15 rounded-full blur-[80px]"></div>
+            <div className="absolute top-20 right-1/4 w-[250px] h-[250px] bg-orange-400 opacity-10 rounded-full blur-[70px]"></div>
+          </div>
+        </div>
       </div>
     </div>
   );

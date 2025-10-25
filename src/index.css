@@ -211,3 +211,124 @@
 .pulse-orange {
   animation: pulseGlow 2s infinite;
 }
+
+/* Feature card border animation */
+@keyframes borderRotate {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+@keyframes borderPulse {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.feature-card {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: 0;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    transparent 0deg,
+    transparent 60deg,
+    rgba(249, 115, 22, 0.3) 120deg,
+    #f97316 180deg,
+    #fb923c 240deg,
+    rgba(251, 146, 60, 0.3) 300deg,
+    transparent 360deg
+  );
+  border-radius: 0.875rem;
+  animation: borderRotate 8s linear infinite, borderPulse 4s ease-in-out infinite;
+  pointer-events: none;
+  filter: blur(0.5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+}
+
+.feature-card-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-card-content {
+  background: rgba(10, 10, 10, 0.9);
+  box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.2);
+}
+
+/* Service Tags Slideshow Animations */
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes slideLeftToRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideRightToLeft {
+  animation: slideRightToLeft 20s linear infinite;
+  display: inline-block;
+}
+
+.animate-slideLeftToRight {
+  animation: slideLeftToRight 20s linear infinite;
+  display: inline-block;
+}
+
+/* Hover pause animation */
+.animate-slideRightToLeft:hover,
+.animate-slideLeftToRight:hover {
+  animation-play-state: paused;
+}
