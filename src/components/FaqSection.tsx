@@ -36,7 +36,7 @@ const faqs = [
 
 const FaqSection = () => {
   return (
-    <div className="bg-saas-black pb-20">
+    <div className="bg-saas-black pb-10">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-8">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
