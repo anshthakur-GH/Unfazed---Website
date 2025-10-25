@@ -11,12 +11,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 w-full max-w-4xl z-50 px-3 sm:px-4">
+    <div className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 w-full max-w-6xl z-50 px-4 sm:px-6">
       <div className="w-full">
         <div className="animated-border">
           <nav className="bg-saas-black/80 backdrop-blur-lg rounded-full border border-saas-darkGray/20 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex justify-between h-12 sm:h-16 items-center">
+            <div className="w-full px-6 sm:px-8">
+              <div className="flex items-center justify-between h-14 sm:h-16">
             {/* Logo - Left side */}
             <div className="flex-shrink-0">
               <Link to="/" className="flex items-center">
@@ -27,7 +27,7 @@ const Navbar = () => {
             </div>
 
             {/* Navigation - Right side */}
-            <div className="hidden md:flex items-center space-x-1">
+            <div className="hidden md:flex items-center justify-end flex-1 space-x-8">
               <button
                 onClick={() => {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -49,7 +49,7 @@ const Navbar = () => {
               >
                 Services
               </button>
-              <div className="hidden md:block">
+              <div className="hidden md:block ml-4">
                 <Button 
                   variant="outline" 
                   onClick={() => {
@@ -71,7 +71,7 @@ const Navbar = () => {
             </div>
 
             {/* Mobile menu and CTA buttons */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-4 md:hidden">
               <Button 
                 variant="outline" 
                 onClick={() => {
