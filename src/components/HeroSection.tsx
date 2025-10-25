@@ -7,7 +7,7 @@ const LogoSlideshow = lazy(() => import('./LogoSlideshow'));
 
 const HeroSection = () => {
   return (
-    <div className="relative overflow-hidden pt-20">
+    <div className="relative overflow-hidden pt-24">
       {/* Top Gradient Section */}
       <div className="absolute inset-0 bg-gradient-to-b from-saas-black to-transparent -z-10 h-[800px]"></div>
       {/* Hero Content */}
@@ -66,12 +66,14 @@ const HeroSection = () => {
                   <LogoSlideshow />
                 </Suspense>
               </div>
+            </div>
+          </div>
 
           {/* Why Choose Unfazed Section */}
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-20 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                Why Choose <span className="text-saas-orange">Unfazed</span>
+                Why Choose <span className="text-saas-orange">Unfazed?</span>
               </h2>
               <p className="text-white max-w-2xl mx-auto font-medium">
                 See how we stack up against traditional solutions
@@ -98,7 +100,7 @@ const HeroSection = () => {
                   feature: 'Implementation Time',
                   traditional: 'Weeks to Months',
                   unfazed: 'Days',
-                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://wwwwww.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 },
                 {
                   feature: 'Cost Efficiency',
@@ -142,181 +144,184 @@ const HeroSection = () => {
               ))}
             </div>
           </div>
-            </div>
-          </div>
 
-          {/* Where We Drive 24/7 Growth Section */}
-          <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-20 relative z-10">
+          {/* Where We Drive 24/7 Growth */}
+          <div id="services-section" className="w-full max-w-[2000px] mx-auto px-4 sm:px-6 py-20 relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
-                Where We Drive <span className="text-saas-orange">24/7</span> Growth
+                Where We Drive <span className="text-saas-orange">24/7 </span>Growth
               </h2>
               <p className="text-white max-w-2xl mx-auto font-medium">
-                High-Impact Workflows That Solve Your Biggest Business Bottlenecks.
+                Automating your success around the clock with precision and care
               </p>
-            </div> 
+            </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 w-full max-w-4xl mx-auto">
-              {/* Feature 1 */}
-              <div className="feature-card group">
-                <div className="feature-card-content bg-transparent p-8 flex flex-col h-full">
-                  <div className="flex-1 flex flex-col">
-                    <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-xl font-bold text-white">Lead Generation</h3>
-                    </div>
-                    <p className="text-gray-300 text-sm">Automated lead capture and qualification to fill your pipeline with high-quality prospects 24/7.</p>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[2000px] mx-auto">
+              {/* Lead Generation Card */}
+              <div className="bg-saas-black/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-saas-orange/50 transition-colors h-full">
+                <div className="w-12 h-12 rounded-lg bg-saas-orange/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M12 16h.01M16 12h.01M8 12h.01M3 20h18a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
                 </div>
+                <h3 className="text-xl font-bold text-white mb-2">Lead Generation</h3>
+                <p className="text-gray-300 text-sm">Automated lead capture and qualification that works while you sleep, filling your pipeline with high-quality prospects.</p>
               </div>
 
-              {/* Feature 2 */}
-              <div className="feature-card group">
-                <div className="feature-card-content bg-transparent p-8 flex flex-col h-full">
-                  <div className="flex-1 flex flex-col">
-                    <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                        </svg>
+              {/* Project Management Card */}
+              <div className="bg-saas-black/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-saas-orange/50 transition-colors h-full">
+                <div className="w-12 h-12 rounded-lg bg-saas-orange/10 flex items-center justify-center mb-4">
+                  <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">AI-Powered Creative Studio Card</h3>
+                <p className="text-gray-300 text-sm">Instantly generate UGC ad creatives and campaign variations using specialized AI. Slash testing costs and boost conversion rates.</p>
+              </div>
+              
+              {/* Your Tailored Automation Roadmap */}
+              <div className="md:col-span-2 bg-saas-black/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 transition-colors w-full">
+                <h3 className="text-2xl font-bold text-white mb-8 text-center">
+                  Your <span className="text-saas-orange">Automation </span>Roadmap
+                </h3>
+                
+                <div className="py-4">
+                  <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-3 md:gap-6">
+                    {/* Step 1 */}
+                    <div className="relative pl-12 md:pl-0">
+                      <div className="flex items-center mb-2">
+                        <div className="w-6 h-6 rounded-full bg-saas-orange/10 flex items-center justify-center mr-2">
+                          <span className="text-saas-orange font-bold text-sm">1</span>
+                        </div>
+                        <h4 className="text-lg font-bold text-white">Discover & Design</h4>
                       </div>
-                      <h3 className="text-xl font-bold text-white">Project Management</h3>
+                      <p className="text-gray-300 text-sm pl-8 md:pl-8">We map your business, pinpointing inefficiencies to design custom AI Automation solution.</p>
                     </div>
-                    <p className="text-gray-300 text-sm">Streamline your workflow with automated task tracking and team collaboration tools.</p>
+
+                    {/* Step 2 */}
+                    <div className="relative pl-12 md:pl-0">
+                      <div className="flex items-center mb-2">
+                        <div className="w-6 h-6 rounded-full bg-saas-orange/10 flex items-center justify-center mr-2">
+                          <span className="text-saas-orange font-bold text-sm">2</span>
+                        </div>
+                        <h4 className="text-lg font-bold text-white">Build & Integrate</h4>
+                      </div>
+                      <p className="text-gray-300 text-sm pl-8 md:pl-8">Our experts build bespoke workflows, seamlessly integrating AI and your existing systems.</p>
+                    </div>
+
+                    {/* Step 3 */}
+                    <div className="relative pl-12 md:pl-0">
+                      <div className="flex items-center mb-2">
+                        <div className="w-6 h-6 rounded-full bg-saas-orange/10 flex items-center justify-center mr-2">
+                          <span className="text-saas-orange font-bold text-sm">3</span>
+                        </div>
+                        <h4 className="text-lg font-bold text-white">Deploy & Optimize</h4>
+                      </div>
+                      <p className="text-gray-300 text-sm pl-8 md:pl-8">We launch, monitor, and refine for reliability and guaranteed performance.</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Feature 3 */}
-              <div className="feature-card group">
-                <div className="feature-card-content bg-transparent p-8 flex flex-col h-full">
-                  <div className="flex-1 flex flex-col">
-                    <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-xl font-bold text-white">Financial Automation</h3>
-                    </div>
-                    <p className="text-gray-300 text-sm mb-0">Automate invoicing, expense tracking, and financial reporting for better cash flow management.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Feature 4 */}
-              <div className="feature-card group mt-0">
-                <div className="feature-card-content bg-transparent p-8 flex flex-col h-full">
-                  <div className="flex-1 flex flex-col">
-                    <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-saas-orange/10 rounded-lg flex items-center justify-center mr-4">
-                        <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      </div>
-                      <h3 className="text-xl font-bold text-white">Customer Support</h3>
-                    </div>
-                    <p className="text-gray-300 text-sm mb-0">24/7 automated customer support with AI-powered responses and ticket management.</p>
-                  </div>
+                
+                <div className="mt-8 text-center">
+                  <Button className="bg-saas-orange hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200 text-sm">
+                    Start Your Unfazed Journey
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Service Tags Slideshow */}
-          <div className="mt-8">
-            <div className="w-full py-12 overflow-hidden">
-              {/* First row - Right to Left */}
-              <div className="flex whitespace-nowrap mb-6">
-                <div className="animate-slideRightToLeft flex space-x-4">
-                  {[
-                    { name: 'Voice Agents', icon: <Mic className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'HR Management', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Lead Gen System', icon: <Zap className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'SEO Audit', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Onboarding', icon: <UserPlus className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'UGC Generation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'RAG Chatbots', icon: <Bot className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Payment System', icon: <CreditCard className="w-4 h-4 mr-2 text-saas-orange" /> }
-                  ].map((service, i) => (
-                    <div key={`row1-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-200 hover:border-saas-orange/50 transition-colors">
-                      {service.icon}
-                      {service.name}
-                    </div>
-                  ))}
-                  {[
-                    { name: 'Voice Agents', icon: <Mic className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'HR Management', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Lead Gen System', icon: <Zap className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'SEO Audit', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Onboarding', icon: <UserPlus className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'UGC Generation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'RAG Chatbots', icon: <Bot className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Payment System', icon: <CreditCard className="w-4 h-4 mr-2 text-saas-orange" /> }
-                  ].map((service, i) => (
-                    <div key={`row1-dup-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-200 hover:border-saas-orange/50 transition-colors">
-                      {service.icon}
-                      {service.name}
-                    </div>
-                  ))}
-                </div>
+          <div className="w-full pt-2 pb-4 overflow-hidden">
+            {/* First row - Right to Left */}
+            <div className="flex whitespace-nowrap mb-6">
+              <div className="animate-slideRightToLeft flex space-x-4">
+                {[
+                  { name: 'Voice Agents', icon: <Mic className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'HR Management', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Lead Gen System', icon: <Zap className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'SEO Audit', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Onboarding', icon: <UserPlus className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'UGC Generation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'RAG Chatbots', icon: <Bot className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Payment System', icon: <CreditCard className="w-4 h-4 mr-2 text-saas-orange" /> }
+                ].map((service, i) => (
+                  <div key={`row1-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-200 hover:border-saas-orange/50 transition-colors">
+                    {service.icon}
+                    {service.name}
+                  </div>
+                ))}
+                {/* Duplicate for seamless loop */}
+                {[
+                  { name: 'Voice Agents', icon: <Mic className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'HR Management', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Lead Gen System', icon: <Zap className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'SEO Audit', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Onboarding', icon: <UserPlus className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'UGC Generation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'RAG Chatbots', icon: <Bot className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Payment System', icon: <CreditCard className="w-4 h-4 mr-2 text-saas-orange" /> }
+                ].map((service, i) => (
+                  <div key={`row1-dup-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-200 hover:border-saas-orange/50 transition-colors">
+                    {service.icon}
+                    {service.name}
+                  </div>
+                ))}
               </div>
+            </div>
 
-              {/* Second row - Left to Right */}
-              <div className="flex whitespace-nowrap">
-                <div className="animate-slideLeftToRight flex space-x-4">
-                  {[
-                    { name: 'Customer Support', icon: <Headphones className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'AD Creatives', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Custom CRMs', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Chatbots', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Research', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Youtube', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Social Media', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Monitoring', icon: <ClipboardCheck className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Document Mgmt', icon: <FileCode className="w-4 h-4 mr-2 text-saas-orange" /> }
-                  ].map((service, i) => (
-                    <div key={`row2-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-300 hover:border-saas-orange/50 transition-colors">
-                      {service.icon}
-                      {service.name}
-                    </div>
-                  ))}
-                  {[
-                    { name: 'Customer Support', icon: <Headphones className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'AD Creatives', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Custom CRMs', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Chatbots', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Research', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Youtube', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Social Media', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Monitoring', icon: <ClipboardCheck className="w-4 h-4 mr-2 text-saas-orange" /> },
-                    { name: 'Document Mgmt', icon: <FileCode className="w-4 h-4 mr-2 text-saas-orange" /> }
-                  ].map((service, i) => (
-                    <div key={`row2-dup-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-300 hover:border-saas-orange/50 transition-colors">
-                      {service.icon}
-                      {service.name}
-                    </div>
-                  ))}
-                </div>
+            {/* Second row - Left to Right */}
+            <div className="flex whitespace-nowrap">
+                            <div className="animate-slideLeftToRight flex space-x-4">
+                {[
+                  { name: 'Customer Support', icon: <Headphones className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'AD Creatives', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Custom CRMs', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Chatbots', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Research', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Youtube', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Social Media', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Monitoring', icon: <ClipboardCheck className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Document Mgmt', icon: <FileCode className="w-4 h-4 mr-2 text-saas-orange" /> }
+                ].map((service, i) => (
+                  <div key={`row2-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-300 hover:border-saas-orange/50 transition-colors">
+                    {service.icon}
+                    {service.name}
+                  </div>
+                ))}
+                {/* Duplicate for seamless loop */}
+                {[
+                  { name: 'Customer Support', icon: <Headphones className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'AD Creatives', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Custom CRMs', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Chatbots', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Research', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Youtube', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Social Media', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Monitoring', icon: <ClipboardCheck className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Document Mgmt', icon: <FileCode className="w-4 h-4 mr-2 text-saas-orange" /> }
+                ].map((service, i) => (
+                  <div key={`row2-dup-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-300 hover:border-saas-orange/50 transition-colors">
+                    {service.icon}
+                    {service.name}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-
-          {/* Background elements */}
-          <div className="absolute inset-0 overflow-hidden -z-10">
-            <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-saas-orange opacity-10 rounded-full blur-[100px]"></div>
-            <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-orange-700 opacity-15 rounded-full blur-[80px]"></div>
-            <div className="absolute top-20 right-1/4 w-[250px] h-[250px] bg-orange-400 opacity-10 rounded-full blur-[70px]"></div>
-          </div>
         </div>
+      </div>
+
+      {/* Background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-saas-orange opacity-10 rounded-full blur-[100px]"></div>
+        <div className="absolute bottom-0 left-1/4 w-[300px] h-[300px] bg-orange-700 opacity-15 rounded-full blur-[80px]"></div>
+        <div className="absolute top-20 right-1/4 w-[250px] h-[250px] bg-orange-400 opacity-10 rounded-full blur-[70px]"></div>
       </div>
     </div>
   );

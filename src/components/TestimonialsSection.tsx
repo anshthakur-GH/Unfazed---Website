@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Trusted by <span className="gradient-text">Innovative</span> Companies
+            Trusted by <span className="gradient-text">250+</span> Businesses
           </h2>
           <p className="text-gray-400">
             Don't just take our word for it. Here's what our customers have to say about Unfazed.

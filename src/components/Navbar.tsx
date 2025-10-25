@@ -28,30 +28,27 @@ const Navbar = () => {
 
             {/* Navigation - Right side */}
             <div className="hidden md:flex items-center space-x-1">
-              <Link
-                to="/"
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-full ${
-                  location.pathname === "/" ? "text-saas-orange" : "text-white hover:text-saas-orange"
-                }`}
+              <button
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-4 py-2 text-sm font-medium text-white hover:text-saas-orange transition-colors rounded-full"
               >
                 Home
-              </Link>
-              <Link
-                to="/roadmap"
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-full ${
-                  location.pathname === "/roadmap" ? "text-saas-orange" : "text-white hover:text-saas-orange"
-                }`}
+              </button>
+              <button
+                onClick={() => {
+                  const element = document.getElementById('services-section');
+                  if (element) {
+                    const yOffset = -80; // Adjust this value based on your navbar height
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                  }
+                }}
+                className="px-4 py-2 text-sm font-medium text-white hover:text-saas-orange transition-colors rounded-full"
               >
-                Roadmap
-              </Link>
-              <Link
-                to="/pricing"
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-full ${
-                  location.pathname === "/pricing" ? "text-saas-orange" : "text-white hover:text-saas-orange"
-                }`}
-              >
-                Pricing
-              </Link>
+                Services
+              </button>
               <Link
                 to="/contact"
                 className={`px-4 py-2 text-sm font-medium transition-colors rounded-full ${
@@ -89,27 +86,27 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden bg-saas-darkGray/95 rounded-b-xl">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link
-                to="/"
-                className="block px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
-                onClick={toggleMenu}
+              <button
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  toggleMenu();
+                }}
+                className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
               >
                 Home
-              </Link>
-              <Link
-                to="/roadmap"
-                className="block px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
-                onClick={toggleMenu}
+              </button>
+              <button
+                onClick={() => {
+                  const element = document.getElementById('services-section');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    toggleMenu();
+                  }
+                }}
+                className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
               >
-                roadmap
-              </Link>
-              <Link
-                to="/pricing"
-                className="block px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
-                onClick={toggleMenu}
-              >
-                Pricing
-              </Link>
+                Services
+              </button>
               <Link
                 to="/contact"
                 className="block px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
