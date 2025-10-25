@@ -9,6 +9,9 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
     open: true,
   },
+  optimizeDeps: {
+    include: ['next-themes'],
+  },
   plugins: [react()],
   resolve: {
     alias: {
@@ -25,8 +28,9 @@ export default defineConfig(({ mode }) => ({
         entryFileNames: 'assets/js/[name]-[hash].js',
         chunkFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return 'assets/[name]-[hash][extname]';
           const info = assetInfo.name.split('.');
-          const ext = info[info.length - 1];
+          const ext = info[info.length - 1].toLowerCase();
           if (ext === 'css') {
             return 'assets/css/[name]-[hash][extname]';
           }
