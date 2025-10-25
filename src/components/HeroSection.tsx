@@ -71,6 +71,39 @@ const HeroSection = () => {
 
           {/* Why Choose Unfazed Section */}
           <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-20 relative z-10">
+            {/* Glowing Border Animation */}
+            <style jsx>{`
+              @keyframes border-glow {
+                0%, 100% {
+                  border-color: rgba(255, 138, 0, 0.3);
+                  box-shadow: 0 0 5px rgba(255, 138, 0, 0.1);
+                }
+                25% {
+                  border-color: rgba(229, 46, 113, 0.3);
+                  box-shadow: 0 0 5px rgba(229, 46, 113, 0.1);
+                }
+                50% {
+                  border-color: rgba(35, 166, 213, 0.3);
+                  box-shadow: 0 0 5px rgba(35, 166, 213, 0.1);
+                }
+                75% {
+                  border-color: rgba(35, 213, 171, 0.3);
+                  box-shadow: 0 0 5px rgba(35, 213, 171, 0.1);
+                }
+              }
+              .glowing-border {
+                position: relative;
+                border: 1px solid transparent;
+                border-radius: 1rem;
+                animation: border-glow 12s linear infinite;
+                background: transparent;
+                transition: all 0.3s ease;
+              }
+              .glowing-border:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+              }
+            `}</style>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
                 Why Choose <span className="text-saas-orange">Unfazed?</span>
@@ -80,7 +113,8 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="bg-saas-black/50 backdrop-blur-sm rounded-2xl border border-gray-800 overflow-hidden">
+            <div className="relative">
+              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-2xl overflow-hidden">
               {/* Table Header */}
               <div className="grid grid-cols-12 bg-saas-black/80 border-b border-gray-800">
                 <div className="col-span-5 p-6"></div>
@@ -142,6 +176,7 @@ const HeroSection = () => {
                   </div>
                 </div>
               ))}
+              </div>
             </div>
           </div>
 
@@ -158,7 +193,7 @@ const HeroSection = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[2000px] mx-auto">
               {/* Lead Generation Card */}
-              <div className="bg-saas-black/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-saas-orange/50 transition-colors h-full">
+              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-saas-orange/50 transition-colors h-full">
                 <div className="w-12 h-12 rounded-lg bg-saas-orange/10 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M12 16h.01M16 12h.01M8 12h.01M3 20h18a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
@@ -169,18 +204,18 @@ const HeroSection = () => {
               </div>
 
               {/* Project Management Card */}
-              <div className="bg-saas-black/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-saas-orange/50 transition-colors h-full">
+              <div className="glowing-border bg-saas-black/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-saas-orange/50 transition-colors h-full">
                 <div className="w-12 h-12 rounded-lg bg-saas-orange/10 flex items-center justify-center mb-4">
                   <svg className="w-6 h-6 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">AI-Powered Creative Studio Card</h3>
+                <h3 className="text-xl font-bold text-white mb-2">AI-Powered Creative Studio </h3>
                 <p className="text-gray-300 text-sm">Instantly generate UGC ad creatives and campaign variations using specialized AI. Slash testing costs and boost conversion rates.</p>
               </div>
               
               {/* Your Tailored Automation Roadmap */}
-              <div className="md:col-span-2 bg-saas-black/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 transition-colors w-full">
+              <div className="glowing-border md:col-span-2 bg-saas-black/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-800 transition-colors w-full">
                 <h3 className="text-2xl font-bold text-white mb-8 text-center">
                   Your <span className="text-saas-orange">Automation </span>Roadmap
                 </h3>
@@ -239,14 +274,14 @@ const HeroSection = () => {
               <div className="animate-slideRightToLeft flex space-x-4">
                 {[
                   { name: 'Voice Agents', icon: <Mic className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'HR Management', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'HR Management System', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
                   { name: 'Lead Gen System', icon: <Zap className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'SEO Audit', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Onboarding', icon: <UserPlus className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'UGC Generation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'SEO Audit Workflow', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Onboarding Systems', icon: <UserPlus className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'UGC Content Generation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
                   { name: 'RAG Chatbots', icon: <Bot className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Payment System', icon: <CreditCard className="w-4 h-4 mr-2 text-saas-orange" /> }
+                  { name: 'SEO Content Writing Systems ', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Payment Collection Systems', icon: <CreditCard className="w-4 h-4 mr-2 text-saas-orange" /> }
                 ].map((service, i) => (
                   <div key={`row1-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-200 hover:border-saas-orange/50 transition-colors">
                     {service.icon}
@@ -256,14 +291,14 @@ const HeroSection = () => {
                 {/* Duplicate for seamless loop */}
                 {[
                   { name: 'Voice Agents', icon: <Mic className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'HR Management', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'HR Management System', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
                   { name: 'Lead Gen System', icon: <Zap className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'SEO Audit', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Onboarding', icon: <UserPlus className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'UGC Generation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'SEO Audit Workflow', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Onboarding Systems', icon: <UserPlus className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'UGC Content Generation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
                   { name: 'RAG Chatbots', icon: <Bot className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Payment System', icon: <CreditCard className="w-4 h-4 mr-2 text-saas-orange" /> }
+                  { name: 'SEO Content Writing Systems ', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Payment Collection Systems', icon: <CreditCard className="w-4 h-4 mr-2 text-saas-orange" /> }
                 ].map((service, i) => (
                   <div key={`row1-dup-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-200 hover:border-saas-orange/50 transition-colors">
                     {service.icon}
@@ -277,16 +312,16 @@ const HeroSection = () => {
             <div className="flex whitespace-nowrap">
                             <div className="animate-slideLeftToRight flex space-x-4">
                 {[
-                  { name: 'Customer Support', icon: <Headphones className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'AD Creatives', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Customer Support Agents', icon: <Headphones className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'AD Creatives Systems', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
                   { name: 'Custom CRMs', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Chatbots', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Research', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Youtube', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Social Media', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Monitoring', icon: <ClipboardCheck className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Document Mgmt', icon: <FileCode className="w-4 h-4 mr-2 text-saas-orange" /> }
+                  { name: 'Custom Chatbots', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Custom Research Systems', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Youtube Automation', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Social Media Automation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Custom AI Agents ', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Monitoring Systems', icon: <ClipboardCheck className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Document Management Systems ', icon: <FileCode className="w-4 h-4 mr-2 text-saas-orange" /> }
                 ].map((service, i) => (
                   <div key={`row2-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-300 hover:border-saas-orange/50 transition-colors">
                     {service.icon}
@@ -295,16 +330,16 @@ const HeroSection = () => {
                 ))}
                 {/* Duplicate for seamless loop */}
                 {[
-                  { name: 'Customer Support', icon: <Headphones className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'AD Creatives', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Customer Support Agents', icon: <Headphones className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'AD Creatives Systems', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
                   { name: 'Custom CRMs', icon: <Users className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Chatbots', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Research', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Youtube', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Social Media', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Content Writing', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Monitoring', icon: <ClipboardCheck className="w-4 h-4 mr-2 text-saas-orange" /> },
-                  { name: 'Document Mgmt', icon: <FileCode className="w-4 h-4 mr-2 text-saas-orange" /> }
+                  { name: 'Custom Chatbots', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Custom Research Systems', icon: <Search className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Youtube Automation', icon: <Monitor className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Social Media Automation', icon: <MessageSquare className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Custom AI Agents ', icon: <FileText className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Monitoring Systems', icon: <ClipboardCheck className="w-4 h-4 mr-2 text-saas-orange" /> },
+                  { name: 'Document Management Systems ', icon: <FileCode className="w-4 h-4 mr-2 text-saas-orange" /> }
                 ].map((service, i) => (
                   <div key={`row2-dup-${i}`} className="inline-flex items-center px-4 py-2.5 bg-saas-black/70 backdrop-blur-sm rounded-full border border-gray-800 text-sm font-medium text-gray-300 hover:border-saas-orange/50 transition-colors">
                     {service.icon}

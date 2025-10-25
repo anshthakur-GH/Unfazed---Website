@@ -19,6 +19,61 @@ export default {
 			}
 		},
 		extend: {
+			animation: {
+				'ping-slow': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+				'vibrate': 'vibrate 0.5s ease-in-out infinite',
+			},
+			keyframes: {
+				ping: {
+					'75%, 100%': {
+						transform: 'scale(1.25)',
+						opacity: '0',
+					},
+				},
+				vibrate: {
+					'0%': { transform: 'translateX(0) rotate(-10deg)' },
+					'25%': { transform: 'translateX(-2px) rotate(10deg)' },
+					'50%': { transform: 'translateX(2px) rotate(-10deg)' },
+					'75%': { transform: 'translateX(-2px) rotate(10deg)' },
+					'100%': { transform: 'translateX(0) rotate(-10deg)' },
+				},
+				'accordion-down': {
+					from: {
+						height: '0'
+					},
+					to: {
+						height: 'var(--radix-accordion-content-height)'
+					}
+				},
+				'accordion-up': {
+					from: {
+						height: 'var(--radix-accordion-content-height)'
+					},
+					to: {
+						height: '0'
+					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-in-right': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateX(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateX(0)'
+					}
+				}
+			},
 			fontFamily: {
 				sans: ['Space Grotesk', 'sans-serif'],
 				roboto: ['Roboto', 'sans-serif'],

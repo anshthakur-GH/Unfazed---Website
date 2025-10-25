@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,19 +49,22 @@ const Navbar = () => {
               >
                 Services
               </button>
-              <Link
-                to="/contact"
-                className={`px-4 py-2 text-sm font-medium transition-colors rounded-full ${
-                  location.pathname === "/contact" ? "text-saas-orange" : "text-white hover:text-saas-orange"
-                }`}
-              >
-                Contact
-              </Link>
               <Button 
                 variant="outline" 
+                onClick={() => {
+                  const element = document.getElementById('contact-form');
+                  if (element) {
+                    const yOffset = -80; // Adjust this value based on your navbar height
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                  }
+                }}
                 className="ml-4 border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors"
               >
-                Let's talk
+                <span className="inline-flex items-center">
+                  <Phone className="w-4 h-4 mr-2 animate-vibrate origin-center" />
+                  Let's talk
+                </span>
               </Button>
             </div>
 
@@ -107,19 +110,23 @@ const Navbar = () => {
               >
                 Services
               </button>
-              <Link
-                to="/contact"
-                className="block px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
-                onClick={toggleMenu}
-              >
-                Contact
-              </Link>
               <Button 
                 variant="outline" 
                 className="w-full mt-2 border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors"
-                onClick={toggleMenu}
+                onClick={() => {
+                  const element = document.getElementById('contact-form');
+                  if (element) {
+                    const yOffset = -80;
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                    toggleMenu();
+                  }
+                }}
               >
-                Let's talk
+                <span className="inline-flex items-center">
+                  <Phone className="w-4 h-4 mr-2 animate-vibrate origin-center" />
+                  Let's talk
+                </span>
               </Button>
             </div>
           </div>

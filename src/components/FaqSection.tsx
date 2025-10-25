@@ -9,45 +9,78 @@ import {
 
 const faqs = [
   {
-    question: "How does the free trial work?",
-    answer: "Our free trial gives you full access to all Sassland features for 14 days. No credit card required. At the end of the trial, you can choose a plan that suits your needs or cancel without any charges."
+    question: "How to start?",
+    answer: "Schedule your free 30-minute Strategy Session. We'll identify your biggest time-loss areas and map out a guaranteed ROI plan."
   },
   {
-    question: "Can I change my plan later?",
-    answer: "Absolutely! You can upgrade, downgrade, or change your plan at any time. The changes will be reflected in your next billing cycle."
+    question: "How quickly will I see a return on investment (ROI)?",
+    answer: "Immediate ROI is common. You will typically see measurable time savings and improved efficiency within 30 days of deployment."
   },
   {
-    question: "Is there a setup fee?",
-    answer: "No, there are no setup fees for any of our plans. You only pay the advertised subscription price."
+    question: "What happens if I want to scale my automation later?",
+    answer: "Our systems are built for infinite scalability. We simply expand the existing workflow, integrating new apps or logic as your business grows."
   },
   {
-    question: "Do you offer custom enterprise solutions?",
-    answer: "Yes, we offer custom enterprise solutions tailored to your specific needs. Contact our sales team to discuss your requirements and get a personalized quote."
+    question: "Can you integrate with my existing CRM/Software?",
+    answer: "Yes. We specialize in complex integration. We connect to virtually any software with an API (e.g., CRMs, ERPs, databases)."
   },
   {
-    question: "What kind of support do you offer?",
-    answer: "We offer email support for all plans. Our Professional plan includes priority email support, while Enterprise customers enjoy 24/7 dedicated support and a dedicated account manager."
+    question: "What is the process for implementing a new workflow?",
+    answer: "The process is 3 steps: 1. Discovery & Design (Max 3 Days). 2. Build & Test (Max. 1-2 Weeks). 3. Deploy & Monitor (Immediate launch)."
   },
   {
-    question: "Can I cancel my subscription anytime?",
-    answer: "Yes, you can cancel your subscription at any time. If you cancel, you'll still have access to your plan until the end of your current billing period."
+    question: "Do I need to provide API keys or data access?",
+    answer: "Yes, you provide secure API keys for the systems we automate. All credentials are encrypted and stored securely within your private workflow environment. Our team will assist you to find the API keys for the systems you want to automate."
   }
 ];
 
 const FaqSection = () => {
   return (
-    <div className="bg-saas-black py-16 md:py-24 border-t border-gray-800">
+    <div className="bg-saas-black pb-20">
       <div className="section-container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Frequently Asked <span className="gradient-text">Questions</span>
+        <div className="text-center max-w-3xl mx-auto mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+            Frequently Asked <span className="text-saas-orange">Questions</span>
           </h2>
-          <p className="text-gray-400">
-            Find answers to common questions about Sassland. If you can't find what you're looking for, feel free to contact our support team.
+          <p className="text-gray-400 font-medium">
+            Get clarity on our AI & automation services before you start earning 24/7
           </p>
         </div>
         
-        <div className="max-w-3xl mx-auto bg-saas-darkGray rounded-xl p-6 md:p-8 border border-gray-800 card-shadow">
+        <style jsx>{`
+          @keyframes border-glow {
+            0%, 100% {
+              border-color: rgba(255, 138, 0, 0.3);
+              box-shadow: 0 0 5px rgba(255, 138, 0, 0.1);
+            }
+            25% {
+              border-color: rgba(229, 46, 113, 0.3);
+              box-shadow: 0 0 5px rgba(229, 46, 113, 0.1);
+            }
+            50% {
+              border-color: rgba(35, 166, 213, 0.3);
+              box-shadow: 0 0 5px rgba(35, 166, 213, 0.1);
+            }
+            75% {
+              border-color: rgba(35, 213, 171, 0.3);
+              box-shadow: 0 0 5px rgba(35, 213, 171, 0.1);
+            }
+          }
+          .glowing-border {
+            position: relative;
+            border: 1px solid transparent;
+            border-radius: 1rem;
+            animation: border-glow 12s linear infinite;
+            background: transparent;
+            transition: all 0.3s ease;
+          }
+          .glowing-border:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          }
+        `}</style>
+        
+        <div className="max-w-3xl mx-auto bg-saas-darkGray/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 glowing-border">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-800 last:border-0">
@@ -62,6 +95,7 @@ const FaqSection = () => {
           </Accordion>
         </div>
       </div>
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-800 to-transparent my-8"></div>
     </div>
   );
 };
