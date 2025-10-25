@@ -24,7 +24,6 @@
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https:;"
 
 # Disable Next.js plugin that's being auto-detected
-[plugins]
-  [[plugins.package]]
-    package = "@netlify/plugin-nextjs"
-    enabled = false
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+  enabled = false
