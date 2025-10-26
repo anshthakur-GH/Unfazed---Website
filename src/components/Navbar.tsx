@@ -49,19 +49,14 @@ const Navbar = () => {
               >
                 Services
               </button>
-              <button
-                onClick={() => {
-                  const element = document.getElementById('about-section');
-                  if (element) {
-                    const yOffset = -80;
-                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                  }
-                }}
+              <a
+                href="https://anshthakur.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-4 py-2 text-sm font-medium text-white hover:text-saas-orange transition-colors rounded-full"
               >
                 About Us
-              </button>
+              </a>
               <div className="hidden md:block ml-4">
                 <Button 
                   variant="outline" 
@@ -145,18 +140,15 @@ const Navbar = () => {
               >
                 Services
               </button>
-              <button
-                onClick={() => {
-                  const element = document.getElementById('about-section');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                    toggleMenu();
-                  }
-                }}
-                className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
+              <a
+                href="https://anshthakur.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md block"
+                onClick={toggleMenu}
               >
                 About Us
-              </button>
+              </a>
               <Button 
                 variant="outline" 
                 className="w-full mt-2 border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors"
