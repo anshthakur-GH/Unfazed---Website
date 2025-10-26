@@ -208,13 +208,13 @@ const HeroSection = () => {
                   icon: <svg className="w-4 h-4 sm:w-5 sm:h-5 text-saas-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
                 },
                 {
-                  feature: 'System Operating Hours',
+                  feature: 'Business Operating Hours',
                   traditional: 'Business Hours',
                   unfazed: 'Runs 24/7/365',
                   icon: <svg className="w-4 h-4 sm:w-5 sm:h-5 text-saas-orange flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 },
                 {
-                  feature: 'Data Accuracy Riskr',
+                  feature: 'Data Accuracy Risks',
                   traditional: 'Common',
                   unfazed: 'Eliminated by AI',
                   icon: <svg className="w-5 h-5 text-saas-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>

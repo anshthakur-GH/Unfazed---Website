@@ -135,7 +135,9 @@ const Navbar = () => {
                 onClick={() => {
                   const element = document.getElementById('services-section');
                   if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
+                    const yOffset = -100; // Added offset to account for fixed navbar
+                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
                     toggleMenu();
                   }
                 }}
