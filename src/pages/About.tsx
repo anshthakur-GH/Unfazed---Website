@@ -22,7 +22,7 @@ const About = () => {
                 </span>
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-6 px-2 sm:px-0">
-                Stop losing hours to manual tasks. Our team of certified <span className="font-semibold text-saas-orange">automation</span> and <span className="font-semibold text-saas-orange">AI</span> specialists dedicated to replacing your operational bottlenecks with scalable, guaranteed automation systems.
+                Stop losing hours to manual tasks. Our team of certified <span className="font-semibold text-saas-orange">Automation</span> and <span className="font-semibold text-saas-orange">AI</span> specialists dedicated to replacing your operational bottlenecks with scalable, guaranteed automation systems.
               </p>
               
               {/* CTA Button */}

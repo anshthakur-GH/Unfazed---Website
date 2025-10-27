@@ -73,36 +73,6 @@ const Footer = () => {
           
           {/* Right side - Navigation links */}
           <div className="grid grid-cols-2 gap-8 md:flex md:flex-row md:gap-12 justify-end w-full md:w-1/3 lg:w-1/4">
-            {/* Company links */}
-            <div className="text-center md:text-right">
-              <h3 className="text-lg font-semibold mb-4">Company</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a href="#" className="text-gray-400 hover:text-saas-orange transition-colors">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <Link 
-                    to="/about" 
-                    onClick={() => window.scrollTo(0, 0)}
-                    className="text-gray-400 hover:text-saas-orange transition-colors"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link 
-                    to="/policies" 
-                    onClick={() => window.scrollTo(0, 0)}
-                    className="text-gray-400 hover:text-saas-orange transition-colors"
-                  >
-                    Policies
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
             {/* Product links */}
             <div className="text-center md:text-right">
               <h3 className="text-lg font-semibold mb-4">Product</h3>
@@ -139,6 +109,41 @@ const Footer = () => {
                   >
                     Testimonials
                   </a>
+                </li>
+              </ul>
+            </div>
+
+            {/* Company links */}
+            <div className="text-center md:text-right">
+              <h3 className="text-lg font-semibold mb-4">Company</h3>
+              <ul className="space-y-3">
+                <li>
+                  <a 
+                    href="https://wa.me/917460011985?text=I%20want%20to%20contact%20Unfazed%20AI" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-saas-orange transition-colors"
+                  >
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <Link 
+                    to="/about" 
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="text-gray-400 hover:text-saas-orange transition-colors"
+                  >
+                    About Us
+                  </Link>
+                </li>
+                <li>
+                  <Link 
+                    to="/policies" 
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="text-gray-400 hover:text-saas-orange transition-colors"
+                  >
+                    Policies
+                  </Link>
                 </li>
               </ul>
             </div>

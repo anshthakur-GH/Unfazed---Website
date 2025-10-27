@@ -274,7 +274,7 @@ const HeroSection = () => {
                   </svg>
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2 text-center">Lead Generation</h3>
-                <p className="text-xs text-gray-300 leading-relaxed text-center">Automated lead capture and qualification that works while you sleep, filling your pipeline with high-quality prospects.</p>
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-center">Automated lead capture and qualification that works while you sleep, filling your pipeline with high-quality prospects.</p>
               </div>
 
               {/* Project Management Card */}
@@ -285,7 +285,7 @@ const HeroSection = () => {
                   </svg>
                 </div>
                 <h3 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2 text-center">AI-Powered Creative Studio</h3>
-                <p className="text-xs text-gray-300 leading-relaxed text-center">Instantly generate UGC ad creatives and campaign variations using specialized AI. Slash testing costs and boost conversion rates.</p>
+                <p className="text-sm sm:text-base text-gray-300 leading-relaxed text-center">Instantly generate UGC ad creatives and campaign variations using specialized AI. Slash testing costs and boost conversion rates.</p>
               </div>
               
               {/* Your Tailored Automation Roadmap */}
@@ -304,7 +304,7 @@ const HeroSection = () => {
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-white">Discover & Design</h4>
                       </div>
-                      <p className="text-xs text-gray-300 pl-7 sm:pl-8">We map your business, pinpointing inefficiencies to design custom AI Automation solution.</p>
+                      <p className="text-base sm:text-lg text-gray-300 mb-2 sm:mb-3">We map your business, pinpointing inefficiencies to design custom AI Automation solution.</p>
                     </div>
 
                     {/* Step 2 */}
@@ -315,7 +315,7 @@ const HeroSection = () => {
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-white">Build & Integrate</h4>
                       </div>
-                      <p className="text-xs text-gray-300 pl-7 sm:pl-8">Our experts build bespoke workflows, seamlessly integrating AI and your existing systems.</p>
+                      <p className="text-base sm:text-lg text-gray-300 mb-2 sm:mb-3">Our experts build bespoke workflows, seamlessly integrating AI and your existing systems.</p>
                     </div>
 
                     {/* Step 3 */}
@@ -326,18 +326,20 @@ const HeroSection = () => {
                         </div>
                         <h4 className="text-base sm:text-lg font-bold text-white">Deploy & Optimize</h4>
                       </div>
-                      <p className="text-xs text-gray-300 pl-7 sm:pl-8">We launch, monitor, and refine for reliability and guaranteed performance.</p>
+                      <p className="text-base sm:text-lg text-gray-300">We launch, monitor, and refine for reliability and guaranteed performance.</p>
                     </div>
                   </div>
                 </div>
                 
                 <div className="mt-4 sm:mt-6 text-center">
                   <a 
-                    href="#contact-form"
-                    className="inline-flex items-center bg-saas-orange hover:bg-orange-600 text-white font-semibold py-1.5 px-4 sm:py-2 sm:px-6 rounded-md sm:rounded-lg transition-all duration-200 text-xs sm:text-sm"
+                    href="https://wa.me/917460011985?text=I%20want%20to%20book%20a%20session"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center bg-saas-orange hover:bg-orange-600 text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-md sm:rounded-lg transition-all duration-200 text-sm sm:text-base"
                   >
-                    Start Your Unfazed Journey
-                    <ArrowRight className="ml-1.5 sm:ml-2 h-3 w-3 sm:h-4 sm:w-4" />
+                    Book a Session Now
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </div>
               </div>

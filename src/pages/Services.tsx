@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion, useAnimation, useInView, Variants } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -95,24 +96,39 @@ const Services = () => {
   }, []);
   return (
     <div className="min-h-screen bg-saas-black text-white">
+      <Helmet>
+        <title>Our Services | Unfazed AI - AI-Powered Business Automation</title>
+        <meta 
+          name="description" 
+          content="Explore our comprehensive AI-powered services including lead generation, content creation, and custom AI solutions designed to transform your business operations." 
+        />
+        <meta name="keywords" content="AI services, lead generation, content creation, AI automation, business automation, AI solutions" />
+        <meta property="og:title" content="AI-Powered Business Services | Unfazed AI" />
+        <meta 
+          property="og:description" 
+          content="Transform your business with our AI-powered services including lead generation, content creation, and custom AI solutions." 
+        />
+        <meta property="og:url" content="https://unfazed-ai.online/services" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://unfazed-ai.online/services" />
+      </Helmet>
       <Navbar />
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="pt-20 md:pt-32 pb-12 md:pb-16">
+        <section className="pt-16 md:pt-24 pb-8 md:pb-12">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
               Your Path to Unfazed <span className="text-saas-orange">24/7</span> Operations
             </h1>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-300 mb-8 sm:mb-12 max-w-3xl mx-auto px-2 sm:px-0">
-              Our proven, three-step process to guarantee <span className="font-semibold text-saas-orange">ROI</span> and build custom, unbreakable AI workflow systems.
+              Our proven, three-step process to guarantee <span className="font-semibold text-saas-orange">ROI</span> and build custom, unbreakable <span className="font-semibold text-saas-orange">AI workflow </span>systems .
             </p>
 
             {/* Process Roadmap */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               {/* Phase 1 */}
               <div className="relative">
-                <div className="absolute left-1/2 -translate-x-1/2 md:left-auto md:right-full md:translate-x-0 top-6 w-8 h-0.5 bg-gradient-to-r from-transparent via-saas-orange to-transparent md:block hidden"></div>
-                <div className="bg-saas-darkGray/30 border border-saas-darkGray/50 rounded-xl p-4 sm:p-6 h-full flex flex-col items-center text-center">
+                <div className="glowing-border bg-saas-darkGray/30 backdrop-blur-sm rounded-xl p-4 sm:p-6 h-full flex flex-col items-center text-center border border-gray-800 hover:border-saas-orange/50 transition-colors">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-saas-orange/10 flex items-center justify-center mb-3 sm:mb-4">
                     <span className="text-saas-orange text-2xl font-bold">1</span>
                   </div>
@@ -125,23 +141,20 @@ const Services = () => {
 
               {/* Phase 2 */}
               <div className="relative">
-                <div className="absolute left-1/2 -translate-x-1/2 md:left-auto md:right-full md:translate-x-0 top-6 w-8 h-0.5 bg-gradient-to-r from-transparent via-saas-orange to-transparent md:block hidden"></div>
-                <div className="absolute left-1/2 -translate-x-1/2 md:left-auto md:right-0 top-6 w-8 h-0.5 bg-gradient-to-r from-transparent via-saas-orange to-transparent md:block hidden"></div>
-                <div className="bg-saas-darkGray/30 border border-saas-darkGray/50 rounded-xl p-4 sm:p-6 h-full flex flex-col items-center text-center">
+                <div className="glowing-border bg-saas-darkGray/30 backdrop-blur-sm rounded-xl p-4 sm:p-6 h-full flex flex-col items-center text-center border border-gray-800 hover:border-saas-orange/50 transition-colors">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-saas-orange/10 flex items-center justify-center mb-3 sm:mb-4">
                     <span className="text-saas-orange text-2xl font-bold">2</span>
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">System Design</h3>
                   <p className="text-sm sm:text-base text-gray-300">
-                    We design the blueprint—identifying the exact points where AI agents and automation logic will be implemented to fix bottlenecks.
+                    We design the blueprint identifying the exact points where AI agents and automation logic will be implemented to fix bottlenecks.
                   </p>
                 </div>
               </div>
 
               {/* Phase 3 */}
               <div className="relative">
-                <div className="absolute left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 top-6 w-8 h-0.5 bg-gradient-to-r from-transparent via-saas-orange to-transparent md:block hidden"></div>
-                <div className="bg-saas-darkGray/30 border border-saas-darkGray/50 rounded-xl p-4 sm:p-6 h-full flex flex-col items-center text-center">
+                <div className="glowing-border bg-saas-darkGray/30 backdrop-blur-sm rounded-xl p-4 sm:p-6 h-full flex flex-col items-center text-center border border-gray-800 hover:border-saas-orange/50 transition-colors">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-saas-orange/10 flex items-center justify-center mb-3 sm:mb-4">
                     <span className="text-saas-orange text-2xl font-bold">3</span>
                   </div>
@@ -156,11 +169,11 @@ const Services = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-10 sm:py-12 md:py-16 bg-saas-black/50">
+        <section className="py-8 sm:py-10 md:py-12 bg-saas-black/50">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8 sm:mb-12">
+            <div className="text-center mb-6 sm:mb-10">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">
-                Core <span className="text-saas-orange">AI & Automation</span> Systems We Deploy
+                Core <span className="text-saas-orange">AI </span> & <span className="text-saas-orange"> Automation</span> Systems We Deploy
               </h2>
               <p className="text-xs sm:text-sm text-gray-400 max-w-2xl mx-auto">
                 Custom solutions tailored to your business needs, powered by cutting-edge AI and automation.

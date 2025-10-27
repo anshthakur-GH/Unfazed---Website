@@ -298,6 +298,42 @@
   box-shadow: 0 10px 30px -10px rgba(249, 115, 22, 0.2);
 }
 
+/* Enhanced Glowing Border */
+.glowing-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.glowing-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    transparent 0deg,
+    transparent 70deg,
+    rgba(249, 115, 22, 0.05) 120deg,
+    rgba(249, 115, 22, 0.08) 180deg,
+    rgba(251, 146, 60, 0.06) 240deg,
+    rgba(251, 146, 60, 0.04) 300deg,
+    transparent 360deg
+  );
+  border-radius: 0.75rem;
+  animation: borderRotate 8s linear infinite, borderPulse 4s ease-in-out infinite;
+  filter: blur(0.5px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glowing-border:hover::before {
+  opacity: 1;
+}
+
 /* Service Tags Slideshow Animations */
 @keyframes slideRightToLeft {
   0% {
