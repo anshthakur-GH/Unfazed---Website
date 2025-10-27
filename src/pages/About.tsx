@@ -9,7 +9,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-saas-black text-white">
       <Navbar />
-      <main className="space-y-12 md:space-y-24">
+      <main className="pt-24 space-y-12 md:space-y-24">
         {/* Hero Section */}
         <section className="relative overflow-hidden pt-16 md:pt-24">
           <div className="absolute inset-0 bg-gradient-to-b from-saas-black to-transparent -z-10 h-[700px] md:h-[800px]"></div>
@@ -89,7 +89,7 @@ const About = () => {
         </section>
 
         {/* Core Values Section */}
-        <section className="py-10 sm:py-16 bg-saas-black/50">
+        <section className="py-8 sm:py-12 bg-saas-black/50">
           <style dangerouslySetInnerHTML={{
             __html: `
               @keyframes border-glow {
@@ -132,9 +132,9 @@ const About = () => {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
                 We Don't Just Save Time—We Guarantee <span className="text-saas-orange">ROI</span>
               </h2>
-              <div className="w-20 h-1 bg-saas-orange mx-auto mb-8"></div>
+              <div className="w-16 h-0.5 bg-saas-orange mx-auto mb-6 sm:mb-8"></div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-6 md:gap-8 text-left">
                 {[
                   {
                     id: 'time-reclaimed',
@@ -161,14 +161,14 @@ const About = () => {
                     description: "Every project comes with a clear ROI calculation, focusing on profit maximization."
                   }
                 ].map((item) => (
-                  <div key={item.id} className="glowing-border bg-saas-black/30 p-4 sm:p-6 rounded-lg border border-gray-800 hover:border-saas-orange/30 transition-all duration-300 h-full">
+                  <div key={item.id} className="glowing-border bg-saas-black/30 p-3 sm:p-6 rounded-lg border border-gray-800 hover:border-saas-orange/30 transition-all duration-300 h-full">
                     <div className="flex items-start space-x-4">
                       <div className="bg-saas-orange/10 p-2 rounded-lg">
                         {item.icon}
                       </div>
                       <div>
-                        <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                        <p className="text-gray-400">{item.description}</p>
+                        <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2">{item.title}</h3>
+                        <p className="text-gray-400 text-sm sm:text-base">{item.description}</p>
                       </div>
                     </div>
                   </div>

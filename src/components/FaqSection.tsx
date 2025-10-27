@@ -39,10 +39,10 @@ const FaqSection = () => {
     <div className="bg-saas-black pb-0">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-6 md:mb-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 text-white">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-white">
             Frequently Asked <span className="text-saas-orange">Questions</span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-400 font-medium">
+          <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto px-2">
             Get clarity on our AI & automation services before you start earning 24/7
           </p>
         </div>

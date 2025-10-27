@@ -91,6 +91,15 @@ const Footer = () => {
                     About Us
                   </Link>
                 </li>
+                <li>
+                  <Link 
+                    to="/policies" 
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="text-gray-400 hover:text-saas-orange transition-colors"
+                  >
+                    Policies
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -108,9 +117,13 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="#services-section" className="text-gray-400 hover:text-saas-orange transition-colors">
-                    Roadmap
-                  </a>
+                  <Link 
+                    to="/services" 
+                    onClick={() => window.scrollTo(0, 0)}
+                    className={`text-gray-400 hover:text-saas-orange transition-colors ${window.location.pathname === '/services' ? 'text-saas-orange' : ''}`}
+                  >
+                    Services
+                  </Link>
                 </li>
                 <li>
                   <a

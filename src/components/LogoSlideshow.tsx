@@ -9,7 +9,8 @@ import logo4 from '../../public/logo4.png';
 import logo5 from '../../public/logo5.png';
 import logo6 from '../../public/logo6.png';
 import logo7 from '../../public/logo7.png';
-
+import logo8 from '../../public/logo8.png';
+import logo9 from '../../public/logo9.png';
 const logos = [
   { id: 1, src: logo1, alt: 'Logo 1', className: 'h-6 md:h-8' },
   { id: 2, src: logo2, alt: 'Logo 2', className: 'h-6 md:h-8' },
@@ -17,7 +18,9 @@ const logos = [
   { id: 4, src: logo4, alt: 'Logo 4', className: 'h-6 md:h-8' },
   { id: 5, src: logo5, alt: 'Logo 5', className: 'h-6 md:h-8' },
   { id: 6, src: logo6, alt: 'Logo 6', className: 'h-8 md:h-10' },
-  { id: 7, src: logo7, alt: 'Logo 7', className: 'h-8 md:h-10' }
+  { id: 7, src: logo7, alt: 'Logo 7', className: 'h-8 md:h-10' },
+  { id: 8, src: logo8, alt: 'Logo 8', className: 'h-8 md:h-10' },
+  { id: 9, src: logo9, alt: 'Logo 9', className: 'h-8 md:h-10' }
 ];
 
 const LogoSlideshow = () => {

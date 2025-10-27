@@ -35,19 +35,13 @@ const Navbar = () => {
               >
                 Home
               </Link>
-              <button
-                onClick={() => {
-                  const element = document.getElementById('services-section');
-                  if (element) {
-                    const yOffset = -80; // Adjust this value based on your navbar height
-                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                  }
-                }}
-                className="px-4 py-2 text-sm font-medium text-white hover:text-saas-orange transition-colors rounded-full"
+              <Link
+                to="/services"
+                onClick={() => window.scrollTo(0, 0)}
+                className={`px-4 py-2 text-sm font-medium ${location.pathname === '/services' ? 'text-saas-orange' : 'text-white hover:text-saas-orange'} transition-colors rounded-full`}
               >
                 Services
-              </button>
+              </Link>
               <Link
                 to="/about"
                 className="px-4 py-2 text-sm font-medium text-white hover:text-saas-orange transition-colors rounded-full"
@@ -87,12 +81,10 @@ const Navbar = () => {
                     window.scrollTo({ top: y, behavior: 'smooth' });
                   }
                 }}
-                className="md:hidden border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors h-9 px-3 text-xs sm:text-sm"
+                className="md:hidden border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors h-9 w-9 p-0 flex items-center justify-center"
+                aria-label="Contact us"
               >
-                <span className="inline-flex items-center">
-                  <Phone className="w-3 h-3 sm:w-4 sm:h-4 mr-1 animate-vibrate origin-center" />
-                  Let's talk
-                </span>
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 animate-vibrate origin-center" />
               </Button>
               
               <button
@@ -123,24 +115,23 @@ const Navbar = () => {
               >
                 Home
               </button>
-              <button
+              <Link
+                to="/services"
                 onClick={() => {
-                  const element = document.getElementById('services-section');
-                  if (element) {
-                    const yOffset = -100; // Added offset to account for fixed navbar
-                    const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                    toggleMenu();
-                  }
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  toggleMenu();
                 }}
-                className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md"
+                className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md block"
               >
                 Services
-              </button>
+              </Link>
               <Link
                 to="/about"
                 className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md block"
-                onClick={toggleMenu}
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  toggleMenu();
+                }}
               >
                 About Us
               </Link>

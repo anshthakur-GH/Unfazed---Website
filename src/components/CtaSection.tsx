@@ -241,7 +241,7 @@ const CtaSection = () => {
                   <Button 
                     type="submit" 
                     disabled={isSubmitting}
-                    className={`w-full bg-gradient-to-r from-saas-orange to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white font-semibold py-3 text-base transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`w-full bg-gradient-to-r from-saas-orange to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white font-semibold py-3 sm:py-3 text-sm sm:text-base transition-all duration-300 transform hover:scale-[1.02] ${
                       isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
                     }`}
                   >
@@ -255,7 +255,7 @@ const CtaSection = () => {
                       </span>
                     ) : (
                       <span className="flex items-center justify-center">
-                        Get My Free Automation Strategy
+Get Free Automation Strategy
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                           <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
                         </svg>
