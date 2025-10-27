@@ -71,7 +71,7 @@ const About = () => {
                 <div className="relative h-56 sm:h-64 md:h-96 rounded-xl overflow-hidden border border-gray-800">
                   <div className="absolute inset-0">
                     <img 
-                      src="/visual-representation.png" 
+                      src="/visual-representation.gif" 
                       alt="Visual representation of our automation process"
                       className="w-full h-full object-cover"
                       loading="lazy"
