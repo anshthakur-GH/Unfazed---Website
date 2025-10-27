@@ -83,9 +83,13 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-saas-orange transition-colors">
+                  <Link 
+                    to="/about" 
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="text-gray-400 hover:text-saas-orange transition-colors"
+                  >
                     About Us
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -95,9 +99,13 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-4">Product</h3>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="text-gray-400 hover:text-saas-orange transition-colors">
+                  <Link 
+                    to="/" 
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="text-gray-400 hover:text-saas-orange transition-colors"
+                  >
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#services-section" className="text-gray-400 hover:text-saas-orange transition-colors">

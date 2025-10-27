@@ -28,14 +28,13 @@ const Navbar = () => {
 
             {/* Navigation - Right side */}
             <div className="hidden md:flex items-center justify-end flex-1 space-x-8">
-              <button
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
+              <Link 
+                to="/" 
+                onClick={() => window.scrollTo(0, 0)}
                 className="px-4 py-2 text-sm font-medium text-white hover:text-saas-orange transition-colors rounded-full"
               >
                 Home
-              </button>
+              </Link>
               <button
                 onClick={() => {
                   const element = document.getElementById('services-section');
@@ -49,14 +48,12 @@ const Navbar = () => {
               >
                 Services
               </button>
-              <a
-                href="https://anshthakur.netlify.app"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/about"
                 className="px-4 py-2 text-sm font-medium text-white hover:text-saas-orange transition-colors rounded-full"
               >
                 About Us
-              </a>
+              </Link>
               <div className="hidden md:block ml-4">
                 <Button 
                   variant="outline" 
