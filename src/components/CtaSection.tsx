@@ -147,7 +147,7 @@ const CtaSection = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
+                      className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500/60 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
                       placeholder="Ansh Thakur"
                     />
                   </div>
@@ -163,7 +163,7 @@ const CtaSection = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
+                      className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500/60 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
                       placeholder="unfazed@ai.online"
                     />
                   </div>
@@ -178,7 +178,7 @@ const CtaSection = () => {
                       type="tel"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
+                      className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500/60 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
                       placeholder="(123) 456-7890"
                     />
                   </div>
@@ -193,7 +193,7 @@ const CtaSection = () => {
                       type="text"
                       value={formData.company}
                       onChange={handleChange}
-                      className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
+                      className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500/60 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
                       placeholder="Your Company"
                     />
                   </div>
@@ -205,7 +205,7 @@ const CtaSection = () => {
                   What is your biggest automation challenge right now? (Optional)
                 </label>
                 <Select onValueChange={handleSelectChange} value={formData.challenge}>
-                  <SelectTrigger className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full">
+                  <SelectTrigger className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-700/20 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full">
                     <SelectValue placeholder="Select your challenge" />
                   </SelectTrigger>
                   <SelectContent className="bg-saas-darkGray border-gray-800 text-white backdrop-blur-md">
@@ -230,7 +230,7 @@ const CtaSection = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
-                    className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
+                    className="bg-saas-darkGray/30 border-gray-800 text-white placeholder-gray-500/60 focus:border-saas-orange/50 focus:ring-saas-orange/50 w-full"
                     placeholder="Eg. I need to automate my lead generation process to improve sales efficiency."
                   />
                 </div>
