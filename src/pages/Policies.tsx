@@ -130,19 +130,17 @@ const Policies = () => {
         {/* Contact CTA */}
         <section className="text-center py-12">
           <h3 className="text-xl font-semibold mb-4">Have questions about our policies?</h3>
-          <Link 
-            to="/"
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href = '/#contact-form';
-            }}
+          <a 
+            href="https://wa.me/917460011985"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 py-3 bg-saas-orange hover:bg-orange-600 text-white font-medium rounded-lg transition-colors"
           >
-            Contact Us
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+            Chat on WhatsApp
+            <svg className="h-5 w-5 ml-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fillRule="evenodd" d="M12 2C6.48 2 2 6.48 2 12c0 1.96.63 3.78 1.69 5.27L2 22l4.73-1.69A9.98 9.98 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.8 14.4l-1.5-1.5c-.3-.3-.8-.2-1.1.1-1.4 1.1-3.2 1.7-5.2 1.7-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6c0 1.1-.3 2.2-.8 3.1-.2.4-.2.8.1 1.1l1.5 1.5c.2.2.5.3.7.3.2 0 .5-.1.7-.3.3-.3.3-.9 0-1.2z" clipRule="evenodd" />
             </svg>
-          </Link>
+          </a>
         </section>
       </main>
       <Footer />
