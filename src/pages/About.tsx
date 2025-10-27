@@ -101,6 +101,7 @@ const About = () => {
                   border-color: rgba(229, 46, 113, 0.3);
                   box-shadow: 0 0 5px rgba(229, 46, 113, 0.1);
                 }
+                
                 50% {
                   border-color: rgba(35, 166, 213, 0.3);
                   box-shadow: 0 0 5px rgba(35, 166, 213, 0.1);

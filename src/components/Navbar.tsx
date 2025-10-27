@@ -137,15 +137,13 @@ const Navbar = () => {
               >
                 Services
               </button>
-              <a
-                href="https://anshthakur.netlify.app"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/about"
                 className="w-full text-left px-3 py-2 text-base font-medium text-white hover:bg-saas-darkGray/50 rounded-md block"
                 onClick={toggleMenu}
               >
                 About Us
-              </a>
+              </Link>
               <Button 
                 variant="outline" 
                 className="w-full mt-2 border-saas-orange text-saas-orange hover:bg-saas-orange/10 hover:text-saas-orange transition-colors"
