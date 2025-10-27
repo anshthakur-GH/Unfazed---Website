@@ -7,7 +7,7 @@ const Policies = () => {
   return (
     <div className="min-h-screen bg-saas-black text-white">
       <Navbar />
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10 md:pb-16 max-w-4xl">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10 md:pb-16 max-w-4xl space-y-12 md:space-y-24">
         {/* Hero Section */}
         <section className="text-center mb-8 sm:mb-12 md:mb-20">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-saas-orange to-amber-500 bg-clip-text text-transparent">
