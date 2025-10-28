@@ -92,7 +92,9 @@ const Services = () => {
       }
     `;
     document.head.appendChild(style);
-    return () => document.head.removeChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
   return (
     <div className="min-h-screen bg-saas-black text-white">
@@ -184,7 +186,21 @@ const Services = () => {
               {services.map((service, index) => {
                 const controls = useAnimation();
                 const ref = useRef(null);
-                const isInView = useInView(ref, { once: true, margin: "-100px" });
+                const [isMobile, setIsMobile] = React.useState(false);
+                
+                React.useEffect(() => {
+                  const handleResize = () => {
+                    setIsMobile(window.innerWidth < 768);
+                  };
+                  handleResize(); // Set initial value
+                  window.addEventListener('resize', handleResize);
+                  return () => window.removeEventListener('resize', handleResize);
+                }, []);
+                
+                const isInView = useInView(ref, { 
+                  once: true, 
+                  margin: isMobile ? "-20px" : "-100px" 
+                });
 
                 useEffect(() => {
                   if (isInView) {
@@ -192,14 +208,14 @@ const Services = () => {
                   }
                 }, [controls, isInView]);
 
-                const cardVariants = { // Removed : Variants annotation for non-TS
+                const cardVariants = {
                   hidden: { opacity: 0, y: 20 },
-                  visible: (i) => ({ // Removed : number annotation
+                  visible: (i: number) => ({
                     opacity: 1,
                     y: 0,
                     transition: {
                       duration: 0.5,
-                      ease: [0.4, 0, 0.2, 1],
+                      ease: [0.4, 0, 0.2, 1] as const,
                       delay: i * 0.1
                     }
                   })

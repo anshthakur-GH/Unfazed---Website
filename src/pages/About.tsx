@@ -119,10 +119,18 @@ const About = () => {
                 background: transparent;
                 transition: all 0.3s ease;
               }
-              @media (min-width: 768px) {
-                .glowing-border:hover {
-                  transform: translateY(-1px);
-                  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+              /* Always show animations on mobile, enhance on hover for desktop */
+              .glowing-border:hover, 
+              .glowing-border:focus {
+                transform: translateY(-1px);
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+              }
+              
+              /* Ensure animations are visible on mobile */
+              @media (max-width: 767px) {
+                .glowing-border {
+                  animation: border-glow 12s linear infinite !important;
+                  opacity: 1 !important;
                 }
               }
             `
