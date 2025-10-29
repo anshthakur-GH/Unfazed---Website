@@ -96,19 +96,26 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="#testimonials-section"
+                  <Link
+                    to="/#testimonials"
                     className="text-gray-400 hover:text-saas-orange transition-colors"
                     onClick={(e) => {
-                      e.preventDefault();
-                      const element = document.getElementById('testimonials-section');
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
+                      // If we're already on the home page, handle the scroll manually
+                      if (window.location.pathname === '/') {
+                        e.preventDefault();
+                        const element = document.getElementById('testimonials-section');
+                        if (element) {
+                          // Update the URL without causing a page reload
+                          window.history.pushState(null, '', '/#testimonials');
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
                       }
+                      // If we're on a different page, the Link will handle the navigation
+                      // and the TestimonialsSection's useEffect will handle the scroll
                     }}
                   >
                     Testimonials
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>

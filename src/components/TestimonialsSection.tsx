@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useCallback, useMemo, memo } from 'react';
 
 interface Testimonial {
   text: string;
@@ -63,7 +63,7 @@ interface TestimonialCardProps {
   testimonial: Testimonial;
 }
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => (
+const TestimonialCard: React.FC<TestimonialCardProps> = memo(({ testimonial }) => (
   <div className="bg-gradient-to-b from-saas-darkGray to-saas-black border border-gray-800 rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6 card-shadow flex-shrink-0 mx-1.5 w-52 sm:w-72 lg:w-80 h-full flex flex-col">
     <div className="flex mb-1.5 sm:mb-3">
       {[...Array(5)].map((_, i) => (
@@ -99,65 +99,134 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial }) => (
       </div>
     </div>
   </div>
-);
+));
 
-const TestimonialSlideshow = ({ testimonials, direction = 'right', speed = 'normal' }) => {
-  const scrollerRef = useRef(null);
-  const scrollerContentRef = useRef(null);
-  
-  useEffect(() => {
-    if (!scrollerRef.current || !scrollerContentRef.current) return;
+interface TestimonialSlideshowProps {
+  testimonials: Testimonial[];
+  direction?: 'left' | 'right';
+  speed?: 'slow' | 'normal' | 'fast';
+}
+
+const TestimonialSlideshow: React.FC<TestimonialSlideshowProps> = ({ 
+  testimonials, 
+  direction = 'right', 
+  speed = 'normal' 
+}) => {
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const scrollerContentRef = useRef<HTMLDivElement>(null);
+  const animationFrameId = useRef<number>();
+  const lastTimestamp = useRef<number>(0);
+  const scrollAmount = useRef<number>(0);
+  const isVisible = useRef<boolean>(true);
+
+  // Memoize speed values - increased for faster animation
+  const SPEED_MULTIPLIER = useMemo(() => {
+    switch(speed) {
+      case 'slow': return 0.8;  // Increased from 0.3
+      case 'fast': return 2.5;  // Increased from 1
+      case 'normal':
+      default:
+        return 1.5;  // Increased from 0.5
+    }
+  }, [speed]);
+
+  // Throttled scroll function
+  const scroll = useCallback((timestamp: number) => {
+    if (!scrollerRef.current || !scrollerContentRef.current || !isVisible.current) {
+      animationFrameId.current = requestAnimationFrame(scroll);
+      return;
+    }
+
+    const delta = timestamp - lastTimestamp.current;
+    // Reduced frame delay for smoother animation on mobile
+    const FRAME_DELAY = 10; // Increased from 16ms for smoother animation (~100fps)
     
-    const scroller = scrollerRef.current;
-    const scrollerContent = scrollerContentRef.current;
-    
-    // Duplicate the content for seamless looping
-    scrollerContent.innerHTML += scrollerContent.innerHTML;
-    
-    let scrollAmount = 0;
-    const scrollSpeed = speed === 'fast' ? 1 : 0.5;
-    
-    const scroll = () => {
-      if (!scroller) return;
+    if (delta > FRAME_DELAY) {
+      const scroller = scrollerRef.current;
+      const scrollWidth = scroller.scrollWidth / 2;
       
       if (direction === 'right') {
-        scrollAmount += scrollSpeed;
-        if (scrollAmount >= scrollerContent.scrollWidth / 2) {
-          scrollAmount = 0;
+        scrollAmount.current += SPEED_MULTIPLIER;
+        if (scrollAmount.current >= scrollWidth) {
+          scrollAmount.current = 0;
         }
-        scroller.scrollLeft = scrollAmount;
+        scroller.scrollLeft = scrollAmount.current;
       } else {
-        scrollAmount -= scrollSpeed;
-        if (Math.abs(scrollAmount) >= scrollerContent.scrollWidth / 2) {
-          scrollAmount = 0;
+        scrollAmount.current -= SPEED_MULTIPLIER;
+        if (Math.abs(scrollAmount.current) >= scrollWidth) {
+          scrollAmount.current = 0;
         }
-        scroller.scrollLeft = scrollerContent.scrollWidth / 2 + scrollAmount;
+        scroller.scrollLeft = scrollWidth + scrollAmount.current;
       }
-      
-      requestAnimationFrame(scroll);
-    };
-    
-    const animationId = requestAnimationFrame(scroll);
-    
+
+      lastTimestamp.current = timestamp;
+    }
+
+    animationFrameId.current = requestAnimationFrame(scroll);
+  }, [direction, SPEED_MULTIPLIER]);
+
+  // Setup intersection observer to pause when not in view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        isVisible.current = entries[0].isIntersecting;
+        if (isVisible.current && !animationFrameId.current) {
+          lastTimestamp.current = performance.now();
+          animationFrameId.current = requestAnimationFrame(scroll);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (scrollerRef.current) {
+      observer.observe(scrollerRef.current);
+    }
+
+    // Initial start
+    lastTimestamp.current = performance.now();
+    animationFrameId.current = requestAnimationFrame(scroll);
+
     return () => {
-      cancelAnimationFrame(animationId);
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+        animationFrameId.current = undefined;
+      }
+      if (scrollerRef.current) {
+        observer.unobserve(scrollerRef.current);
+      }
+      observer.disconnect();
     };
-  }, [direction, speed]);
+  }, [scroll]);
+
+  // Memoize the duplicated testimonials to prevent unnecessary re-renders
+  const duplicatedTestimonials = useMemo(() => 
+    [...testimonials, ...testimonials], 
+    [testimonials]
+  );
   
   return (
     <div 
       ref={scrollerRef}
-      className="w-full overflow-hidden"
+      className="w-full overflow-hidden will-change-transform"
       style={{
-        WebkitMaskImage: 'linear-gradient(90deg, transparent, black 5%, black 95%, transparent)'
+        WebkitMaskImage: 'linear-gradient(90deg, transparent, black 5%, black 95%, transparent)',
+        maskImage: 'linear-gradient(90deg, transparent, black 5%, black 95%, transparent)'
       }}
     >
       <div 
         ref={scrollerContentRef}
         className="flex py-3 sm:py-4 w-max"
+        style={{
+          willChange: 'transform',
+          backfaceVisibility: 'hidden',
+          transform: 'translateZ(0)'
+        }}
       >
-        {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={index} testimonial={testimonial} />
+        {duplicatedTestimonials.map((testimonial, index) => (
+          <TestimonialCard 
+            key={`${testimonial.author}-${index}`} 
+            testimonial={testimonial} 
+          />
         ))}
       </div>
     </div>
@@ -165,16 +234,27 @@ const TestimonialSlideshow = ({ testimonials, direction = 'right', speed = 'norm
 };
 
 const TestimonialsSection = () => {
-  // Split testimonials into two groups for the two rows
-  const firstRowTestimonials = [...testimonials];
-  const secondRowTestimonials = [...testimonials].reverse(); // Reverse for variety
-  
-  // Duplicate the testimonials to ensure smooth looping
-  const duplicatedFirstRow = [...firstRowTestimonials, ...firstRowTestimonials];
-  const duplicatedSecondRow = [...secondRowTestimonials, ...secondRowTestimonials];
+  // Memoize the testimonials to prevent unnecessary re-renders
+  const { firstRowTestimonials, secondRowTestimonials } = useMemo(() => {
+    const firstRow = [...testimonials];
+    const secondRow = [...testimonials].reverse();
+    return { firstRowTestimonials: firstRow, secondRowTestimonials: secondRow };
+  }, []);
+
+  // Add scroll effect when the component mounts if the URL has the hash
+  useEffect(() => {
+    if (window.location.hash === '#testimonials') {
+      const element = document.getElementById('testimonials-section');
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, []);
 
   return (
-    <div id="testimonials-section" className="bg-saas-black pt-10 pb-12 md:pt-12 md:pb-16 overflow-hidden">
+    <div id="testimonials-section" className="scroll-mt-20 bg-saas-black pt-10 pb-12 md:pt-12 md:pb-16 overflow-hidden">
       <div className="section-container">
         <div className="text-center max-w-3xl mx-auto mb-6 md:mb-8 px-4">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4 text-white">
@@ -188,16 +268,16 @@ const TestimonialsSection = () => {
         <div className="space-y-1.5 sm:space-y-3">
           {/* First row - Left to Right */}
           <TestimonialSlideshow 
-            testimonials={duplicatedFirstRow}
+            testimonials={firstRowTestimonials}
             direction="right"
-            speed="normal"
+            speed="fast"
           />
           
           {/* Second row - Right to Left */}
           <TestimonialSlideshow 
-            testimonials={duplicatedSecondRow}
+            testimonials={secondRowTestimonials}
             direction="left"
-            speed="normal"
+            speed="fast"
           />
         </div>
       </div>
