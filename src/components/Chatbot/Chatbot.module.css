@@ -19,21 +19,46 @@
 .chatButton {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 0 20px 0 12px;
-  height: 50px;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px 0 12px;
+  height: 46px;
+  min-width: 46px;
   border-radius: 30px;
-  background-color: #000000; /* Black background */
+  background-color: #000000;
   color: white;
-  border: 2px solid #f97316; /* Orange border */
+  border: 2px solid #f97316;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   position: relative;
   overflow: hidden;
   animation: pulse 2s infinite;
+}
+
+@media (max-width: 480px) {
+  .chatButton {
+    height: 46px;
+    width: 46px;
+    padding: 0;
+    border-radius: 50%;
+  }
+  
+  .chatLabel {
+    display: none;
+  }
+  
+  .chatIcon {
+    margin: 0;
+  }
+  
+  .chatWindow {
+    right: 15px;
+    left: 15px;
+    width: auto;
+  }
 }
 
 .chatIcon {
@@ -93,6 +118,12 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* When there are messages, make it taller */
+.chatWindow.hasMessages {
+  height: 70vh;
+  min-height: 300px;
 }
 
 @keyframes slideUp {
@@ -186,10 +217,67 @@
 .messagesContainer {
   flex: 1;
   overflow-y: auto;
-  padding: 16px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  -webkit-overflow-scrolling: touch;
+  min-height: 100px;
+  max-height: 60vh;
+  transition: max-height 0.3s ease-out;
+}
+
+/* When there are messages, allow more space for the messages */
+.chatWindow.hasMessages .messagesContainer {
+  max-height: calc(70vh - 120px); /* Account for header and input height */
+}
+
+/* Improve touch targets for mobile */
+.message {
+  max-width: 90%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1.4;
+  font-size: 0.9rem;
+  word-wrap: break-word;
+}
+
+/* Adjust input container for mobile */
+.inputContainer {
+  padding: 10px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #1a1a1a;
+  display: flex;
+  gap: 8px;
+  transition: all 0.3s ease-out;
+}
+
+.messageInput {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: #2d2d2d;
+  color: white;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Adjust header for mobile */
+.chatHeader {
+  padding: 10px 12px;
+}
+
+.chatTitle {
+  font-size: 1rem;
+}
+
+/* Make sure buttons are tappable on mobile */
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .message {
