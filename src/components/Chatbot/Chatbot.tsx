@@ -14,13 +14,20 @@ const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [hasUserSentMessage, setHasUserSentMessage] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Clear chat history from localStorage on component mount
+  // Set initial welcome message when component mounts
   useEffect(() => {
     localStorage.removeItem('unfazedChatHistory');
-    setMessages([]);
+    const welcomeMessage: Message = {
+      id: 'welcome-message',
+      text: 'Hi! ⚡ I\'m your Unfazed AI assistant. What kind of work or business are you in?',
+      sender: 'bot',
+      timestamp: Date.now(),
+    };
+    setMessages([welcomeMessage]);
   }, []);
 
   // Save messages to localStorage whenever they change (only while chat is open)
@@ -67,6 +74,11 @@ const Chatbot = () => {
       sender: 'user',
       timestamp: Date.now(),
     };
+
+    // Set flag when user sends first message
+    if (!hasUserSentMessage) {
+      setHasUserSentMessage(true);
+    }
 
     setMessages(prev => [...prev, userMessage]);
     setInputValue('');
@@ -131,10 +143,15 @@ const Chatbot = () => {
     }
   };
 
+  const chatWindowClasses = [
+    styles.chatWindow,
+    hasUserSentMessage ? styles.expanded : styles.collapsed
+  ].join(' ');
+
   return (
     <div className={`${styles.chatbotContainer} ${isOpen ? styles.open : ''}`}>
       {isOpen ? (
-        <div className={styles.chatWindow}>
+        <div className={chatWindowClasses}>
           <div className={styles.chatHeader}>
             <h3 className={styles.chatTitle}>Team Unfazed</h3>
             <div className={styles.headerButtons}>
