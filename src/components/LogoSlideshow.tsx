@@ -14,17 +14,17 @@ import logo9 from '../../public/logo9.png';
 import logo10 from '../../public/logo10.png';
 import logo11 from '../../public/logo11.png';
 const logos = [
-  { id: 1, src: logo1, alt: 'Logo 1', className: 'h-6 md:h-8' },
-  { id: 2, src: logo2, alt: 'Logo 2', className: 'h-6 md:h-8' },
-  { id: 3, src: logo3, alt: 'Logo 3', className: 'h-6 md:h-8' },
-  { id: 4, src: logo4, alt: 'Logo 4', className: 'h-6 md:h-8' },
-  { id: 5, src: logo5, alt: 'Logo 5', className: 'h-6 md:h-8' },
-  { id: 6, src: logo6, alt: 'Logo 6', className: 'h-8 md:h-10' },
-  { id: 7, src: logo7, alt: 'Logo 7', className: 'h-8 md:h-10' },
-  { id: 8, src: logo8, alt: 'Logo 8', className: 'h-8 md:h-10' },
-  { id: 9, src: logo9, alt: 'Logo 9', className: 'h-8 md:h-10' },
-  { id: 10, src: logo10, alt: 'Logo 10', className: 'h-8 md:h-10' },
-  { id: 11, src: logo11, alt: 'Logo 11', className: 'h-8 md:h-10' }
+  { id: 1, src: logo1, alt: 'Logo 1', className: 'h-12 md:h-16' },
+  { id: 2, src: logo2, alt: 'Logo 2', className: 'h-12 md:h-16' },
+  { id: 3, src: logo3, alt: 'Logo 3', className: 'h-12 md:h-16' },
+  { id: 4, src: logo4, alt: 'Logo 4', className: 'h-12 md:h-16' },
+  { id: 5, src: logo5, alt: 'Logo 5', className: 'h-12 md:h-16' },
+  { id: 6, src: logo6, alt: 'Logo 6', className: 'h-16 md:h-20' },
+  { id: 7, src: logo7, alt: 'Logo 7', className: 'h-16 md:h-20' },
+  { id: 8, src: logo8, alt: 'Logo 8', className: 'h-16 md:h-20' },
+  { id: 9, src: logo9, alt: 'Logo 9', className: 'h-16 md:h-20' },
+  { id: 10, src: logo10, alt: 'Logo 10', className: 'h-16 md:h-20' },
+  { id: 11, src: logo11, alt: 'Logo 11', className: 'h-16 md:h-20' }
 ];
 
 const LogoSlideshow = () => {
@@ -68,7 +68,7 @@ const LogoSlideshow = () => {
       const originalLogo = originalLogos[index % originalLogos.length];
       img.src = originalLogo.src;
       img.alt = originalLogo.alt;
-      img.className = `${originalLogo.className || 'h-6 sm:h-8 md:h-10'} w-auto object-contain`;
+      img.className = `${originalLogo.className || 'h-12 sm:h-16 md:h-20'} w-auto object-contain`;
       img.loading = 'lazy';
       
       logoContainer.appendChild(img);
@@ -128,7 +128,7 @@ const LogoSlideshow = () => {
               <img 
                 src={logo.src} 
                 alt={logo.alt}
-                className={`${logo.className || 'h-6 sm:h-8 md:h-10'} w-auto object-contain`}
+                className={`${logo.className || 'h-12 sm:h-16 md:h-20'} w-auto object-contain`}
                 loading="lazy"
                 width="auto"
                 height="auto"

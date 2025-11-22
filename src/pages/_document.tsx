@@ -13,7 +13,7 @@ export default function Document() {
         <meta property="og:url" content="https://unfazed-ai.online/" />
         <meta property="og:title" content="Unfazed AI - AI-Powered Business Automation" />
         <meta property="og:description" content="Transform your business with AI-powered automation and workflow solutions. Get started with our expert services today." />
-        <meta property="og:image" content="https://unfazed-ai.online/og-image.jpg" />
+        <meta property="og:image" content="https:///og-image.jpg" />
         
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
